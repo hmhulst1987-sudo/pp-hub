@@ -1,25 +1,39 @@
 # pp-hub
 
-Cloudflare Pages app. Production URL: **https://hub.pixelpiraterij.online**
-Pages dev URL: https://pp-hub.pages.dev
+Live public hub for PixelPiraterij. Production URL: **https://hub.pixelpiraterij.online**
 
 ## Stack
-- Self-contained HTML (single `index.html`)
-- Tailwind CSS via CDN
-- Lexend font + Material Symbols Outlined
-- Brand colors: `#705E4C` primary, `#FDFBF7` background
+- Static `index.html`
+- Generated `catalog.json` from `shared-product`
+- Hosted on `pixelpiraterij-vps`
+- Served from `/srv/pixelpiraterij-hub` behind Traefik
 
 ## Deploy
-This repo serves as source of truth. To redeploy current state to Cloudflare Pages:
+The public files in this folder are updated from the Android/shared product layer and deployed to the live VPS.
+
+Build and deploy from:
 
 ```bash
-npx wrangler@latest pages deploy . --project-name=pp-hub --branch=main --commit-dirty=true
+C:\Users\Gebruiker\AndroidStudioProjects\PixelPiraterijAPPS
 ```
 
-Set `CLOUDFLARE_API_TOKEN` env var first (Pages:Edit scope).
+Commands:
+
+```bash
+node shared-product/scripts/build-all.mjs
+node shared-product/scripts/deploy-hub.mjs
+```
+
+## Role in the PixelPiraterij stack
+
+- `pixelpiraterij.nl` = commercial front door
+- `pixelpiraterij.online` = engine / showroom / route proof
+- `hub.pixelpiraterij.online` = app gallery / web suite / distribution layer
+
+This repository is the public hub source of truth.
 
 ## Part of the PixelPiraterij app suite
 
-Hub: [hub.pixelpiraterij.online](https://hub.pixelpiraterij.online) lists all apps and provides shared account.
+Hub: [hub.pixelpiraterij.online](https://hub.pixelpiraterij.online) lists all apps and forms the canonical suite layer for web distribution.
 
-Made by [Pixel Piraterij](https://pixelpiraterij.nl) 🏴‍☠️
+Made by [Pixel Piraterij](https://pixelpiraterij.nl)

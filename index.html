@@ -1,573 +1,872 @@
 <!DOCTYPE html>
-<html lang="nl">
-<script>if(localStorage.getItem('pp-theme')==='dark')document.documentElement.classList.add('dark');</script>
+<html lang="nl" data-theme="night">
 <head>
-<meta charset="utf-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<meta name="theme-color" content="#705E4C"/>
-<title>PixelPiraterij – Mijn Account</title>
-<script src="https://cdn.tailwindcss.com?plugins=forms"></script>
-<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;600;700&display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
-<script>tailwind.config={darkMode:'class',theme:{extend:{colors:{primary:"#705E4C","primary-dark":"#5a4b3d","primary-light":"#f7dec7",surface:"#F1EDE3",background:"#FDFBF7","surface-container":"#ece6e0","outline-variant":"#d1c4ba",outline:"#7f756d","on-surface":"#1d1b1a","on-surface-variant":"#605e57",error:"#ba1a1a",success:"#386a1f"},fontFamily:{sans:["Lexend","sans-serif"]},borderRadius:{"2xl":"16px"}}}}</script>
-<style>
-  html.dark .bg-background{background-color:#1a1614!important}html.dark .bg-surface{background-color:#2d2621!important}html.dark header,html.dark nav{background-color:#1a1614!important;border-color:#5a4b3d!important}html.dark .text-on-surface{color:#f0e8e0!important}html.dark .text-on-surface-variant{color:#a89888!important}html.dark .border-outline-variant{border-color:#5a4b3d!important}html.dark .bg-surface-container{background-color:#3d352e!important}html.dark input{background-color:#2d2621!important;color:#f0e8e0!important;border-color:#5a4b3d!important}
-  body{font-family:'Lexend',sans-serif}
-  .material-symbols-outlined{font-variation-settings:'FILL' 0,'wght' 400,'GRAD' 0,'opsz' 24}
-  .fill{font-variation-settings:'FILL' 1,'wght' 400,'GRAD' 0,'opsz' 24}
-  .page{display:none}.page.active{display:flex;flex-direction:column;min-height:100dvh}
-  #toast{position:fixed;bottom:85px;left:50%;transform:translateX(-50%);background:#574636;color:white;padding:10px 20px;border-radius:999px;font-size:14px;font-weight:500;z-index:1000;opacity:0;transition:opacity 0.3s;pointer-events:none;white-space:nowrap}#toast.show{opacity:1}
-  .toggle{position:relative;display:inline-block;width:48px;height:26px}.toggle input{opacity:0;width:0;height:0}.toggle-slider{position:absolute;inset:0;background:#d1c4ba;border-radius:999px;transition:.3s;cursor:pointer}.toggle-slider:before{content:"";position:absolute;width:20px;height:20px;left:3px;top:3px;background:white;border-radius:50%;transition:.3s;box-shadow:0 1px 3px rgba(0,0,0,0.2)}input:checked+.toggle-slider{background:#705E4C}input:checked+.toggle-slider:before{transform:translateX(22px)}
-  .app-card{transition:transform 0.2s,box-shadow 0.2s}.app-card:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(112,94,76,0.12)}
-  @keyframes slide-up{from{transform:translateY(16px);opacity:0}to{transform:translateY(0);opacity:1}}.slide-up{animation:slide-up 0.3s ease-out}
-  .pro-badge{background:linear-gradient(135deg,#705E4C,#a08060);color:white;font-size:10px;font-weight:700;padding:2px 8px;border-radius:999px;letter-spacing:0.05em}
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#121722" />
+  <title>PixelPiraterij Hub | Apps, webversies en downloads</title>
+  <link rel="canonical" href="https://hub.pixelpiraterij.online/" />
+  <link rel="icon" type="image/svg+xml" href="/assets/site/pixelpiraterij-mark.svg" />
+  <link rel="apple-touch-icon" href="/assets/site/pixelpiraterij-mark.svg" />
+  <meta
+    name="description"
+    content="De PixelPiraterij Hub bundelt apps, webversies en latere downloads onder dezelfde paraplu als .nl en .online, maar met een eigen doel."
+  />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="PixelPiraterij Hub" />
+  <meta property="og:locale" content="nl_NL" />
+  <meta property="og:title" content="PixelPiraterij Hub | Apps, webversies en downloads" />
+  <meta
+    property="og:description"
+    content="De PixelPiraterij Hub bundelt apps, webversies en latere downloads onder dezelfde paraplu als .nl en .online, maar met een eigen doel."
+  />
+  <meta property="og:url" content="https://hub.pixelpiraterij.online/" />
+  <meta property="og:image" content="https://pixelpiraterij.online/opengraph-image" />
+  <meta property="og:image:type" content="image/png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="PixelPiraterij Hub social preview" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="PixelPiraterij Hub | Apps, webversies en downloads" />
+  <meta
+    name="twitter:description"
+    content="De PixelPiraterij Hub bundelt apps, webversies en latere downloads onder dezelfde paraplu als .nl en .online, maar met een eigen doel."
+  />
+  <meta name="twitter:image" content="https://pixelpiraterij.online/opengraph-image" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Manrope:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  />
+  <script>
+    (() => {
+      const stored = localStorage.getItem("pp-hub-theme");
+      document.documentElement.dataset.theme = stored === "sand" ? "sand" : "night";
+    })();
+  </script>
+  <style>
+    :root {
+      --canvas: #121722;
+      --panel: #181f2c;
+      --panel-2: #20283a;
+      --line: rgba(255, 255, 255, 0.08);
+      --line-strong: rgba(255, 255, 255, 0.16);
+      --text: #f3efe8;
+      --soft: #bac3d1;
+      --muted: #8d97ab;
+      --signal: #d85b3d;
+      --signal-2: #ecb560;
+      --ok: #64c08a;
+      --shadow: 0 24px 60px rgba(0, 0, 0, 0.28);
+    }
 
-/* ── HIGH-END CRAFT LAYER ─────────────────────────── */
-body::after {
-  content: ''; position: fixed; inset: 0; z-index: 300;
-  pointer-events: none; touch-action: none; opacity: 0.028;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)'/%3E%3C/svg%3E");
-  background-size: 200px 200px;
-}
-.card-shell {
-  padding: 5px; border-radius: 1.375rem;
-  background: var(--surface-container, #f3edea);
-  border: 1px solid color-mix(in srgb, var(--outline-variant, #d1c4ba) 55%, transparent);
-  box-shadow: 0 1px 2px rgba(61,54,46,0.03), 0 4px 12px rgba(61,54,46,0.06), 0 16px 40px rgba(61,54,46,0.04);
-}
-html.dark .card-shell {
-  box-shadow: 0 1px 2px rgba(0,0,0,0.25), 0 4px 12px rgba(0,0,0,0.18), 0 16px 40px rgba(0,0,0,0.12);
-}
-.card-core {
-  border-radius: calc(1.375rem - 5px);
-  background: var(--surface, #F1EDE3);
-  box-shadow: inset 0 1px 0 rgba(255,255,255,0.55);
-  padding: 1.25rem;
-}
-html.dark .card-core { box-shadow: inset 0 1px 0 rgba(255,255,255,0.05); }
-.eyebrow {
-  display: inline-flex; align-items: center; gap: 5px;
-  font-size: 10px; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase;
-  padding: 3px 10px 3px 8px; border-radius: 999px;
-  background: var(--surface-container, #f3edea); color: var(--on-surface-variant, #605e57);
-  border: 1px solid var(--outline-variant, #d1c4ba); margin-bottom: 10px;
-}
-@keyframes enter-up {
-  from { transform: translateY(18px); opacity: 0; filter: blur(5px); }
-  to   { transform: translateY(0);    opacity: 1; filter: blur(0); }
-}
-.enter-up   { animation: enter-up 0.55s cubic-bezier(0.23,1,0.32,1) both; }
-.enter-up-1 { animation-delay: 55ms; }
-.enter-up-2 { animation-delay: 110ms; }
-.enter-up-3 { animation-delay: 170ms; }
-.enter-up-4 { animation-delay: 240ms; }
-.btn-icon-circle {
-  width: 36px; height: 36px; border-radius: 50%;
-  background: rgba(0,0,0,0.1); display: flex; align-items: center; justify-content: center;
-  flex-shrink: 0; transition: transform 200ms cubic-bezier(0.23,1,0.32,1);
-}
-html.dark .btn-icon-circle { background: rgba(255,255,255,0.1); }
-button:hover .btn-icon-circle { transform: scale(1.1) translate(1px,-1px); }
-</style>
+    html[data-theme="sand"] {
+      --canvas: #efe2d2;
+      --panel: #f8f0e5;
+      --panel-2: #f2e7da;
+      --line: rgba(22, 30, 43, 0.08);
+      --line-strong: rgba(22, 30, 43, 0.16);
+      --text: #171d27;
+      --soft: #435066;
+      --muted: #6d788c;
+      --signal: #d85b3d;
+      --signal-2: #b88c3a;
+      --ok: #2f7b53;
+      --shadow: 0 24px 60px rgba(41, 30, 14, 0.12);
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background:
+        radial-gradient(circle at top left, rgba(216, 91, 61, 0.10), transparent 26rem),
+        radial-gradient(circle at top right, rgba(236, 181, 96, 0.08), transparent 22rem),
+        var(--canvas);
+      color: var(--text);
+      font-family: "Manrope", system-ui, sans-serif;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      opacity: 0.045;
+      background-image: linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px);
+      background-size: 36px 36px;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    button { font: inherit; }
+
+    .shell {
+      width: min(92rem, calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      padding-top: 16px;
+    }
+
+    .topbar-shell,
+    .hero-panel,
+    .manifest-panel,
+    .section-block,
+    .cta-dock {
+      border: 1px solid var(--line);
+      background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(18px);
+    }
+
+    .topbar-shell {
+      border-radius: 28px;
+      padding: 20px 22px;
+      display: grid;
+      gap: 18px;
+    }
+
+    .topbar-inner,
+    .topbar-nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .brand-lockup {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .brand-mark {
+      width: 56px;
+      height: 56px;
+      border: 1px solid var(--line-strong);
+      display: grid;
+      place-items: center;
+      background: rgba(255,255,255,0.02);
+      overflow: hidden;
+    }
+
+    .brand-mark img,
+    .app-icon img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .topbar-label,
+    .section-tag,
+    .card-tag {
+      margin: 0;
+      color: var(--signal-2);
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 12px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+    }
+
+    .brand-title {
+      margin: 2px 0 0;
+      font-size: 22px;
+      font-weight: 800;
+    }
+
+    .topbar-status {
+      margin: 0;
+      max-width: 46rem;
+      color: var(--soft);
+      font-size: 14px;
+      line-height: 1.7;
+    }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: center;
+    }
+
+    .topbar-link,
+    .topbar-cta,
+    .hero-btn,
+    .card-link {
+      min-height: 48px;
+      padding: 0 18px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid var(--line-strong);
+      color: var(--text);
+      background: rgba(255,255,255,0.02);
+      transition: border-color 160ms ease, transform 160ms ease, background 160ms ease;
+    }
+
+    .topbar-link:hover,
+    .topbar-cta:hover,
+    .hero-btn:hover,
+    .card-link:hover {
+      transform: translateY(-1px);
+      border-color: rgba(216, 91, 61, 0.42);
+      background: rgba(255,255,255,0.04);
+    }
+
+    .topbar-cta,
+    .hero-btn.is-primary {
+      background: rgba(216, 91, 61, 0.14);
+      border-color: rgba(216, 91, 61, 0.52);
+    }
+
+    .hero {
+      margin-top: 18px;
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(300px, 0.8fr);
+      gap: 18px;
+    }
+
+    .hero-panel,
+    .manifest-panel,
+    .section-block,
+    .cta-dock {
+      border-radius: 28px;
+      padding: clamp(24px, 4vw, 40px);
+    }
+
+    .hero-title {
+      margin: 20px 0 22px;
+      max-width: 11ch;
+      font-size: clamp(48px, 8vw, 92px);
+      line-height: 0.9;
+      letter-spacing: -0.08em;
+    }
+
+    .hero-copy,
+    .manifest-body,
+    .section-body,
+    .card-body,
+    .stack-text {
+      color: var(--soft);
+      line-height: 1.78;
+      font-size: 16px;
+    }
+
+    .hero-actions,
+    .cta-actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 30px;
+    }
+
+    .manifest-cap {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      color: var(--muted);
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 12px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+    }
+
+    .manifest-block + .manifest-block,
+    .manifest-divider {
+      margin-top: 24px;
+    }
+
+    .manifest-divider {
+      height: 1px;
+      background: var(--line);
+    }
+
+    .manifest-kicker,
+    .stack-label {
+      margin: 0 0 10px;
+      color: var(--signal);
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 12px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+
+    .manifest-title,
+    .section-title,
+    .cta-title {
+      margin: 0 0 14px;
+      font-size: clamp(28px, 4vw, 58px);
+      line-height: 0.96;
+      letter-spacing: -0.07em;
+    }
+
+    .section-block {
+      margin-top: 18px;
+    }
+
+    .section-head {
+      display: grid;
+      grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+      gap: 18px;
+      align-items: end;
+      margin-bottom: 24px;
+    }
+
+    .app-grid,
+    .signal-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .app-card,
+    .signal-card {
+      border: 1px solid var(--line);
+      padding: 20px;
+      background: rgba(255,255,255,0.02);
+      display: grid;
+      gap: 18px;
+      min-height: 250px;
+    }
+
+    .app-card-top {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      align-items: flex-start;
+    }
+
+    .app-icon {
+      width: 50px;
+      height: 50px;
+      display: grid;
+      place-items: center;
+      background: rgba(216, 91, 61, 0.16);
+      border: 1px solid rgba(216, 91, 61, 0.32);
+      font-weight: 800;
+      font-size: 18px;
+      color: var(--text);
+    }
+
+    .app-badge {
+      border: 1px solid var(--line-strong);
+      padding: 8px 10px;
+      color: var(--muted);
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+    }
+
+    .app-title,
+    .signal-title {
+      margin: 0;
+      font-size: 24px;
+      line-height: 1.02;
+      letter-spacing: -0.05em;
+    }
+
+    .app-links {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      align-items: center;
+      flex-wrap: wrap;
+      margin-top: auto;
+    }
+
+    .status-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--ok);
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+    }
+
+    .app-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 14px;
+    }
+
+    .meta-pill {
+      display: inline-flex;
+      align-items: center;
+      min-height: 32px;
+      padding: 0 10px;
+      border: 1px solid var(--line-strong);
+      color: var(--muted);
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 11px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      background: rgba(255,255,255,0.02);
+    }
+
+    .card-actions {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    .control-cluster {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 5px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: rgba(255,255,255,0.02);
+    }
+    .control-option {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 42px;
+      min-height: 38px;
+      padding: 0 14px;
+      border: 1px solid transparent;
+      border-radius: 999px;
+      background: transparent;
+      color: var(--muted);
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 12px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: transform 220ms cubic-bezier(0.23, 1, 0.32, 1),
+        background-color 220ms cubic-bezier(0.23, 1, 0.32, 1),
+        color 220ms cubic-bezier(0.23, 1, 0.32, 1),
+        border-color 220ms cubic-bezier(0.23, 1, 0.32, 1);
+    }
+    .control-option:hover {
+      transform: translateY(-1px);
+    }
+    .control-option.is-active {
+      color: var(--text);
+      border-color: rgba(216, 91, 61, 0.44);
+      background: linear-gradient(135deg, rgba(216, 91, 61, 0.16), rgba(236, 181, 96, 0.12));
+    }
+
+    .status-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--ok);
+      box-shadow: 0 0 0 6px rgba(100, 192, 138, 0.14);
+    }
+
+    .stack-board {
+      display: grid;
+      gap: 14px;
+    }
+
+    .stack-row {
+      border: 1px solid var(--line);
+      padding: 18px 20px;
+      background: rgba(255,255,255,0.02);
+    }
+
+    .footer-note {
+      margin-top: 18px;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.7;
+    }
+
+    @media (max-width: 980px) {
+      .hero,
+      .section-head,
+      .app-grid,
+      .signal-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .shell {
+        width: min(100% - 18px, 92rem);
+      }
+
+      .topbar-shell,
+      .hero-panel,
+      .manifest-panel,
+      .section-block,
+      .cta-dock {
+        padding: 22px;
+      }
+
+      .hero-title {
+        max-width: none;
+      }
+    }
+  </style>
 </head>
-<body class="bg-background text-on-surface">
-<div id="toast"></div>
+<body>
+  <main class="shell">
+    <header class="topbar">
+      <div class="topbar-shell">
+        <div class="topbar-inner">
+          <a class="brand-lockup" href="/" aria-label="PixelPiraterij Hub home">
+            <div class="brand-mark"><img src="/assets/site/pixelpiraterij-mark.svg" alt="PixelPiraterij merkicoon" /></div>
+            <div>
+              <p class="topbar-label" id="navEyebrow">App gallery / suite layer</p>
+              <p class="brand-title">PixelPiraterij Hub</p>
+            </div>
+          </a>
+          <p class="topbar-status" id="navStatus">
+            De hub is niet de studio en ook niet de showroom. Dit is de suite-laag waar apps, webversies en latere downloads
+            logisch samenkomen onder dezelfde PixelPiraterij-paraplu.
+          </p>
+        </div>
 
-<!-- HEADER -->
-<header class="bg-background sticky top-0 z-40 w-full px-5 h-14 flex justify-between items-center border-b border-outline-variant/30 max-w-3xl mx-auto">
-  <div class="flex items-center gap-2">
-    <div class="w-8 h-8 bg-primary rounded-xl flex items-center justify-center">
-      <span class="material-symbols-outlined text-white text-lg fill">anchor</span>
-    </div>
-    <span class="font-bold text-primary text-lg">PixelPiraterij</span>
-  </div>
-  <div class="flex items-center gap-1">
-    <button onclick="toggleDark()" class="w-10 h-10 flex items-center justify-center rounded-xl hover:bg-surface transition-colors text-primary">
-      <span id="dark-icon" class="material-symbols-outlined">dark_mode</span>
-    </button>
-  </div>
-</header>
-
-<!-- ===== PAGE: INLOGGEN ===== -->
-<div id="page-login" class="page active">
-  <main class="flex-grow w-full max-w-md mx-auto px-5 pt-10 pb-32 flex flex-col gap-6">
-    <div class="text-center enter-up enter-up-1">
-      <div class="w-20 h-20 bg-primary rounded-3xl flex items-center justify-center mx-auto mb-4 shadow-lg">
-        <span class="material-symbols-outlined text-white text-4xl fill">anchor</span>
+        <div class="topbar-nav">
+          <div class="nav-links">
+            <a class="topbar-link" href="#apps">Apps</a>
+            <a class="topbar-link" href="#routes">Gebruik</a>
+            <a class="topbar-link" href="https://pixelpiraterij.online" target="_blank" rel="noreferrer">.online</a>
+            <a class="topbar-link" href="https://pixelpiraterij.nl" target="_blank" rel="noreferrer">.nl</a>
+          </div>
+          <div class="nav-links">
+            <div class="control-cluster" aria-label="Thema kiezen">
+              <button class="control-option" type="button" data-theme-option="sand">Sand</button>
+              <button class="control-option" type="button" data-theme-option="night">Night</button>
+            </div>
+            <div class="control-cluster" aria-label="Taal kiezen">
+              <button class="control-option" type="button" data-locale-option="nl">NL</button>
+              <button class="control-option" type="button" data-locale-option="en">EN</button>
+            </div>
+            <a class="topbar-cta" href="mailto:inbox@pixelpiraterij.nl">Vraag toegang</a>
+          </div>
+        </div>
       </div>
-      <h1 class="text-2xl font-bold text-primary">Welkom terug</h1>
-      <p class="text-on-surface-variant text-sm mt-1">Log in op je PixelPiraterij account.</p>
-    </div>
+    </header>
 
-    <div class="card-shell enter-up enter-up-2">
-      <div class="card-core flex flex-col gap-4">
-      <div class="flex flex-col gap-2">
-        <label class="text-xs font-semibold text-on-surface-variant uppercase tracking-wide">E-mailadres</label>
-        <input id="login-email" type="email" placeholder="naam@voorbeeld.nl"
-          class="w-full bg-white text-on-surface rounded-xl px-4 py-3 border border-outline-variant focus:border-primary focus:ring-2 focus:ring-primary/10 outline-none text-sm"/>
+    <section class="hero">
+      <div class="hero-panel">
+        <p class="section-tag" id="heroTag">Galerij, websuite en distributielaag</p>
+        <h1 class="hero-title" id="heroTitle">Apps die los kunnen staan, maar samen sterker lezen.</h1>
+        <p class="hero-copy" id="heroCopy">
+          Hier open je straks webapps, Android-routes en latere software-downloads vanuit één duidelijke PixelPiraterij-laag.
+          Geen world-copy, geen studioroute, maar een hub die gebruik, distributie en suite-logica draagt.
+        </p>
+        <div class="hero-actions">
+          <a class="hero-btn is-primary" id="heroPrimaryCta" href="#apps">Open de app-galerij</a>
+          <a class="hero-btn" id="heroSecondaryCta" href="https://pixelpiraterij.online/apps" target="_blank" rel="noreferrer">Ga naar de showroom</a>
+        </div>
       </div>
-      <div class="flex flex-col gap-2">
-        <label class="text-xs font-semibold text-on-surface-variant uppercase tracking-wide">Wachtwoord</label>
-        <input id="login-pass" type="password" placeholder="••••••••"
-          class="w-full bg-white text-on-surface rounded-xl px-4 py-3 border border-outline-variant focus:border-primary focus:ring-2 focus:ring-primary/10 outline-none text-sm"/>
+
+      <aside class="manifest-panel">
+        <div class="manifest-cap">
+          <span id="manifestCap">Hub-kader</span>
+          <span>2026</span>
+        </div>
+        <div class="manifest-block">
+          <p class="manifest-kicker" id="manifestOneKicker">Wat hier hoort</p>
+          <h2 class="manifest-title" id="manifestOneTitle">Apps openen, webversies vinden en later software distribueren.</h2>
+          <p class="manifest-body" id="manifestOneBody">
+            De hub hoort tastbaar en bruikbaar te zijn. Niet nog een uitleglaag over wie PixelPiraterij is, maar een centrale shelf voor wat iemand echt wil openen of downloaden.
+          </p>
+        </div>
+        <div class="manifest-divider"></div>
+        <div class="manifest-block">
+          <p class="manifest-kicker" id="manifestTwoKicker">Wat hier niet hoort</p>
+          <h2 class="manifest-title" id="manifestTwoTitle">Geen sales-voordeur en geen showroom-verhaal overnemen.</h2>
+          <p class="manifest-body" id="manifestTwoBody">
+            `.nl` verkoopt het traject. `.online` laat capabilities en routes leven. De hub focust op de suite zelf: gebruik, toegang en distributie.
+          </p>
+        </div>
+      </aside>
+    </section>
+
+    <section class="section-block" id="apps">
+      <div class="section-head">
+        <div>
+          <p class="section-tag" id="appsTag">App-galerij</p>
+          <h2 class="section-title" id="appsTitle">Live webversies die nu al een plek verdienen.</h2>
+        </div>
+        <p class="section-body" id="appsBody">
+          Deze kaarten openen de losse routes. Later kan deze laag Android-builds, Windows-software en gedeelde accountlogica toevoegen, zonder dat de apps hun eigen identiteit verliezen.
+        </p>
       </div>
-      <button onclick="doLogin()" class="w-full bg-primary text-white font-bold h-12 rounded-xl flex items-center justify-between pl-5 pr-2 hover:bg-primary-dark transition-all active:scale-95">
-        <span>Inloggen</span>
-        <span class="btn-icon-circle"><span class="material-symbols-outlined text-white" style="font-size:18px">login</span></span>
-      </button>
-      <p class="text-center text-xs text-on-surface-variant">Wachtwoord vergeten? <span class="text-primary font-semibold cursor-pointer" onclick="showToast('Herstelmail verstuurd!')">Herstellen</span></p>
+      <div class="app-meta" style="margin-bottom:24px;">
+        <span class="meta-pill" id="appsMetaOne">Platform: Web live</span>
+        <span class="meta-pill" id="appsMetaTwo">Status: publiek</span>
+        <span class="meta-pill" id="appsMetaThree">Volgende fase: Android / Windows</span>
       </div>
-    </div>
+      <div class="app-grid" id="appGrid"></div>
+    </section>
 
-    <div class="flex items-center gap-3">
-      <div class="flex-1 h-px bg-outline-variant/50"></div>
-      <span class="text-xs text-on-surface-variant">of</span>
-      <div class="flex-1 h-px bg-outline-variant/50"></div>
-    </div>
+    <section class="section-block" id="routes">
+      <div class="section-head">
+        <div>
+          <p class="section-tag">Gebruik van de drie lagen</p>
+          <h2 class="section-title">Elke publieke laag heeft een eigen taak.</h2>
+        </div>
+        <p class="section-body">
+          De familie-uitstraling blijft gelijk, maar de volgorde van actie verschilt. Daardoor blijft het ecosysteem helder in plaats van dat alles in elkaar schuift.
+        </p>
+      </div>
+      <div class="signal-grid">
+        <article class="signal-card">
+          <p class="card-tag">Voordeur</p>
+          <h3 class="signal-title">`pixelpiraterij.nl` verkoopt en kadert.</h3>
+          <p class="card-body">Wie jullie zijn, wat jullie doen, wat jullie al gebouwd hebben en welke route het beste past, begint daar.</p>
+        </article>
+        <article class="signal-card">
+          <p class="card-tag">Showroom</p>
+          <h3 class="signal-title">`pixelpiraterij.online` maakt routes tastbaar.</h3>
+          <p class="card-body">Templates, live demos, capability-proof en de grens tussen snelle route en maatwerk worden daar zichtbaar.</p>
+        </article>
+        <article class="signal-card">
+          <p class="card-tag">Suite</p>
+          <h3 class="signal-title">`hub.pixelpiraterij.online` bundelt gebruik en distributie.</h3>
+          <p class="card-body">Webapps openen, downloads vinden en softwarelagen logisch samenbrengen is de taak van deze hub.</p>
+        </article>
+      </div>
+    </section>
 
-    <div class="flex flex-col gap-3">
-      <button onclick="doGoogleLogin()" class="w-full bg-surface text-on-surface font-semibold h-12 rounded-xl border border-outline-variant flex items-center justify-center gap-3 hover:bg-surface-container transition-colors active:scale-95 text-sm">
-        <svg class="w-5 h-5" viewBox="0 0 24 24"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg>
-        Doorgaan met Google
-      </button>
-    </div>
+    <section class="section-block">
+      <div class="section-head">
+        <div>
+          <p class="section-tag">Wat hierna kan groeien</p>
+          <h2 class="section-title">De hub hoeft nu niet alles te zijn om later wel de juiste plek te worden.</h2>
+        </div>
+        <p class="section-body">
+          We houden het geloofwaardig: eerst een goede galerij en heldere websuite, daarna pas gedeelde accounts, billing, downloads en platformspecifieke distributie.
+        </p>
+      </div>
+      <div class="stack-board">
+        <article class="stack-row">
+          <p class="stack-label">Nu</p>
+          <p class="stack-text">Openbare appkaarten, webversies en een centrale route naar wat nu al live staat.</p>
+        </article>
+        <article class="stack-row">
+          <p class="stack-label">Daarna</p>
+          <p class="stack-text">App-detailpagina's, release-status, changelogs en duidelijke verschillen tussen webgebruik en downloadbare builds.</p>
+        </article>
+        <article class="stack-row">
+          <p class="stack-label">Later</p>
+          <p class="stack-text">Android-downloads, Windows/browser-software, gedeelde accountlogica en een suite-overkoepelende distributielaag.</p>
+        </article>
+      </div>
+    </section>
 
-    <p class="text-center text-sm text-on-surface-variant">Nog geen account? <span class="text-primary font-bold cursor-pointer" onclick="showPage('register')">Registreren</span></p>
+    <section class="cta-dock">
+      <div>
+        <p class="section-tag">Volgende stap</p>
+        <h2 class="cta-title">Gebruik de hub om apps te openen. Ga alleen terug omhoog als je een andere laag nodig hebt.</h2>
+        <p class="section-body">
+          Voor verkoop en routekeuze ga je naar `.nl`. Voor tastbare capability-demo's ga je naar `.online`. Voor apps, webversies en latere downloads blijf je hier.
+        </p>
+        <p class="footer-note">Public hub source of truth: `pp-apps/pp-hub`</p>
+      </div>
+      <div class="cta-actions">
+        <a class="hero-btn is-primary" href="https://pixelpiraterij.online/apps" target="_blank" rel="noreferrer">Open .online apps</a>
+        <a class="hero-btn" href="https://pixelpiraterij.nl/contact" target="_blank" rel="noreferrer">Start briefing</a>
+      </div>
+    </section>
   </main>
-</div>
 
-<!-- ===== PAGE: REGISTREREN ===== -->
-<div id="page-register" class="page">
-  <main class="flex-grow w-full max-w-md mx-auto px-5 pt-10 pb-32 flex flex-col gap-6">
-    <div class="text-center">
-      <h1 class="text-2xl font-bold text-primary">Account aanmaken</h1>
-      <p class="text-on-surface-variant text-sm mt-1">Word lid van de PixelPiraterij crew.</p>
-    </div>
+  <script>
+    const appGrid = document.getElementById("appGrid");
+    const localeButtons = Array.from(document.querySelectorAll("[data-locale-option]"));
+    const themeButtons = Array.from(document.querySelectorAll("[data-theme-option]"));
+    let currentCatalog = null;
+    let currentLocale = localStorage.getItem("pp-hub-locale") === "en" ? "en" : "nl";
 
-    <div class="bg-surface rounded-2xl p-6 flex flex-col gap-4 border border-outline-variant/40">
-      <div class="flex flex-col gap-2">
-        <label class="text-xs font-semibold text-on-surface-variant uppercase tracking-wide">Naam</label>
-        <input id="reg-name" type="text" placeholder="Kapitein Piraat"
-          class="w-full bg-white text-on-surface rounded-xl px-4 py-3 border border-outline-variant focus:border-primary focus:ring-2 focus:ring-primary/10 outline-none text-sm"/>
-      </div>
-      <div class="flex flex-col gap-2">
-        <label class="text-xs font-semibold text-on-surface-variant uppercase tracking-wide">E-mailadres</label>
-        <input id="reg-email" type="email" placeholder="naam@voorbeeld.nl"
-          class="w-full bg-white text-on-surface rounded-xl px-4 py-3 border border-outline-variant focus:border-primary focus:ring-2 focus:ring-primary/10 outline-none text-sm"/>
-      </div>
-      <div class="flex flex-col gap-2">
-        <label class="text-xs font-semibold text-on-surface-variant uppercase tracking-wide">Wachtwoord</label>
-        <input id="reg-pass" type="password" placeholder="Minimaal 8 tekens"
-          class="w-full bg-white text-on-surface rounded-xl px-4 py-3 border border-outline-variant focus:border-primary focus:ring-2 focus:ring-primary/10 outline-none text-sm"/>
-      </div>
-      <button onclick="doRegister()" class="w-full bg-primary text-white font-bold h-12 rounded-xl hover:bg-primary-dark transition-all active:scale-95">
-        Account aanmaken
-      </button>
-      <p class="text-xs text-center text-on-surface-variant">Door te registreren ga je akkoord met onze <span class="text-primary cursor-pointer">Voorwaarden</span> en <span class="text-primary cursor-pointer">Privacybeleid</span>.</p>
-    </div>
+    const uiCopy = {
+      nl: {
+        navEyebrow: "App gallery / suite layer",
+        navStatus: "De hub is niet de studio en ook niet de showroom. Dit is de suite-laag waar apps, webversies en latere downloads logisch samenkomen onder dezelfde PixelPiraterij-paraplu.",
+        heroTag: "Galerij, websuite en distributielaag",
+        heroTitle: "Apps die los kunnen staan, maar samen sterker lezen.",
+        heroCopy: "Hier open je straks webapps, Android-routes en latere software-downloads vanuit één duidelijke PixelPiraterij-laag. Geen world-copy, geen studioroute, maar een hub die gebruik, distributie en suite-logica draagt.",
+        heroPrimaryCta: "Open de app-galerij",
+        heroSecondaryCta: "Ga naar de showroom",
+        manifestCap: "Hub-kader",
+        manifestOneKicker: "Wat hier hoort",
+        manifestOneTitle: "Apps openen, webversies vinden en later software distribueren.",
+        manifestOneBody: "De hub hoort tastbaar en bruikbaar te zijn. Niet nog een uitleglaag over wie PixelPiraterij is, maar een centrale shelf voor wat iemand echt wil openen of downloaden.",
+        manifestTwoKicker: "Wat hier niet hoort",
+        manifestTwoTitle: "Geen sales-voordeur en geen showroom-verhaal overnemen.",
+        manifestTwoBody: "`.nl` verkoopt het traject. `.online` laat capabilities en routes leven. De hub focust op de suite zelf: gebruik, toegang en distributie.",
+        appsTag: "App-galerij",
+        appsTitle: "Live webversies die nu al een plek verdienen.",
+        appsBody: "Deze kaarten openen de losse routes. Later kan deze laag Android-builds, Windows-software en gedeelde accountlogica toevoegen, zonder dat de apps hun eigen identiteit verliezen.",
+        appsMetaOne: "Platform: Web live",
+        appsMetaTwo: "Status: publiek",
+        appsMetaThree: "Volgende fase: Android / Windows",
+        webModeLegacy: "Legacy web",
+        webModeHub: "Nieuwe hubroute",
+        openWeb: "Open web",
+        details: "Details",
+        soon: "Binnenkort",
+        platformLabel: "Platform: Android + Web",
+        statusLabel: "Status"
+      },
+      en: {
+        navEyebrow: "App gallery / suite layer",
+        navStatus: "The hub is not the studio and not the showroom. This is the suite layer where apps, web versions and later downloads come together under the same PixelPiraterij umbrella.",
+        heroTag: "Gallery, web suite and distribution layer",
+        heroTitle: "Apps that can stand alone, but read stronger together.",
+        heroCopy: "This is where web apps, Android routes and later software downloads come together inside one clear PixelPiraterij layer. No world copy, no studio route, but a hub that carries usage, distribution and suite logic.",
+        heroPrimaryCta: "Open the app gallery",
+        heroSecondaryCta: "Go to the showroom",
+        manifestCap: "Hub frame",
+        manifestOneKicker: "What belongs here",
+        manifestOneTitle: "Open apps, find web versions and distribute software later.",
+        manifestOneBody: "The hub should feel tangible and usable. Not another explanation layer about who PixelPiraterij is, but a central shelf for what someone actually wants to open or download.",
+        manifestTwoKicker: "What does not belong here",
+        manifestTwoTitle: "Do not replace the sales front door or showroom narrative.",
+        manifestTwoBody: "`.nl` sells the route. `.online` shows capabilities and live routes. The hub focuses on the suite itself: usage, access and distribution.",
+        appsTag: "App gallery",
+        appsTitle: "Live web versions that already deserve a place.",
+        appsBody: "These cards open the separate routes. Later this layer can add Android builds, Windows software and shared account logic without making the apps lose their own identity.",
+        appsMetaOne: "Platform: Web live",
+        appsMetaTwo: "Status: public",
+        appsMetaThree: "Next phase: Android / Windows",
+        webModeLegacy: "Legacy web",
+        webModeHub: "New hub route",
+        openWeb: "Open web",
+        details: "Details",
+        soon: "Coming soon",
+        platformLabel: "Platform: Android + Web",
+        statusLabel: "Status"
+      }
+    };
 
-    <p class="text-center text-sm text-on-surface-variant">Al een account? <span class="text-primary font-bold cursor-pointer" onclick="showPage('login')">Inloggen</span></p>
-  </main>
-</div>
+    function toTitleCase(value) {
+      return value.replace(/(^|\s|-)\S/g, (match) => match.toUpperCase());
+    }
 
-<!-- ===== PAGE: DASHBOARD (logged in) ===== -->
-<div id="page-dashboard" class="page">
-  <main class="flex-grow w-full max-w-3xl mx-auto px-5 pt-6 pb-32 flex flex-col gap-6">
-    <div class="enter-up enter-up-1">
-      <span class="eyebrow"><span class="material-symbols-outlined" style="font-size:13px">apps</span> Dashboard</span>
-    </div>
+    function applyTheme(theme) {
+      document.documentElement.dataset.theme = theme === "sand" ? "sand" : "night";
+      localStorage.setItem("pp-hub-theme", document.documentElement.dataset.theme);
+      themeButtons.forEach((button) => {
+        button.classList.toggle("is-active", button.dataset.themeOption === document.documentElement.dataset.theme);
+      });
+    }
 
-    <!-- Profiel kaart -->
-    <div class="card-shell enter-up enter-up-2">
-      <div class="card-core flex items-center gap-4">
-      <div class="w-14 h-14 bg-primary rounded-2xl flex items-center justify-center shrink-0">
-        <span id="avatar-letter" class="text-white text-2xl font-bold">P</span>
-      </div>
-      <div class="flex-1 min-w-0">
-        <p id="profile-name" class="font-bold text-on-surface text-lg">Piraat</p>
-        <p id="profile-email" class="text-xs text-on-surface-variant truncate">piraat@pixelpiraterij.nl</p>
-        <div class="flex items-center gap-2 mt-1">
-          <span id="plan-badge" class="text-xs bg-surface-container text-on-surface-variant font-semibold px-2 py-0.5 rounded-full">Gratis plan</span>
-        </div>
-      </div>
-      <button onclick="showPage('pro')" class="text-xs font-bold bg-primary text-white px-3 py-2 rounded-xl shrink-0 flex items-center gap-1">
-        <span>Upgrade</span>
-        <span class="material-symbols-outlined" style="font-size:14px">workspace_premium</span>
-      </button>
-      </div>
-    </div>
+    function applyLocale(locale) {
+      currentLocale = locale === "en" ? "en" : "nl";
+      localStorage.setItem("pp-hub-locale", currentLocale);
+      document.documentElement.lang = currentLocale;
+      localeButtons.forEach((button) => {
+        button.classList.toggle("is-active", button.dataset.localeOption === currentLocale);
+      });
 
-    <!-- Alle apps -->
-    <div>
-      <h2 class="text-sm font-bold text-on-surface-variant uppercase tracking-wide mb-3">Mijn apps</h2>
-      <div class="grid grid-cols-2 gap-3 sm:grid-cols-3">
-        <div class="app-card bg-surface rounded-2xl p-4 flex flex-col gap-3 cursor-pointer border border-outline-variant/30" onclick="openApp('qr')">
-          <div class="w-10 h-10 bg-primary/10 rounded-xl flex items-center justify-center"><span class="material-symbols-outlined text-primary fill">qr_code_scanner</span></div>
-          <div><p class="font-bold text-sm text-on-surface">QR Master</p><p class="text-xs text-on-surface-variant mt-0.5">Scannen & aanmaken</p></div>
-          <span class="text-xs text-primary font-semibold flex items-center gap-1">Openen <span class="material-symbols-outlined text-sm">arrow_forward</span></span>
-        </div>
-        <div class="app-card bg-surface rounded-2xl p-4 flex flex-col gap-3 cursor-pointer border border-outline-variant/30" onclick="openApp('wachtwoord')">
-          <div class="w-10 h-10 bg-primary/10 rounded-xl flex items-center justify-center"><span class="material-symbols-outlined text-primary fill">password</span></div>
-          <div><p class="font-bold text-sm text-on-surface">Wachtwoord</p><p class="text-xs text-on-surface-variant mt-0.5">Generator & vault</p></div>
-          <span class="text-xs text-primary font-semibold flex items-center gap-1">Openen <span class="material-symbols-outlined text-sm">arrow_forward</span></span>
-        </div>
-        <div class="app-card bg-surface rounded-2xl p-4 flex flex-col gap-3 cursor-pointer border border-outline-variant/30" onclick="openApp('calmguard')">
-          <div class="w-10 h-10 bg-primary/10 rounded-xl flex items-center justify-center"><span class="material-symbols-outlined text-primary fill">shield</span></div>
-          <div><p class="font-bold text-sm text-on-surface">CalmGuard</p><p class="text-xs text-on-surface-variant mt-0.5">Ad Blocker & VPN</p></div>
-          <span class="text-xs text-primary font-semibold flex items-center gap-1">Openen <span class="material-symbols-outlined text-sm">arrow_forward</span></span>
-        </div>
-        <div class="app-card bg-surface rounded-2xl p-4 flex flex-col gap-3 cursor-pointer border border-outline-variant/30" onclick="openApp('calmread')">
-          <div class="w-10 h-10 bg-primary/10 rounded-xl flex items-center justify-center"><span class="material-symbols-outlined text-primary fill">menu_book</span></div>
-          <div><p class="font-bold text-sm text-on-surface">CalmRead</p><p class="text-xs text-on-surface-variant mt-0.5">Boeklees app</p></div>
-          <span class="text-xs text-primary font-semibold flex items-center gap-1">Openen <span class="material-symbols-outlined text-sm">arrow_forward</span></span>
-        </div>
-        <div class="app-card bg-surface rounded-2xl p-4 flex flex-col gap-3 cursor-pointer border border-outline-variant/30" onclick="openApp('focus')">
-          <div class="w-10 h-10 bg-primary/10 rounded-xl flex items-center justify-center"><span class="material-symbols-outlined text-primary fill">timer</span></div>
-          <div><p class="font-bold text-sm text-on-surface">Focus Vaart</p><p class="text-xs text-on-surface-variant mt-0.5">Focus timer</p></div>
-          <span class="text-xs text-primary font-semibold flex items-center gap-1">Openen <span class="material-symbols-outlined text-sm">arrow_forward</span></span>
-        </div>
-        <div class="app-card bg-surface rounded-2xl p-4 flex flex-col gap-3 cursor-pointer border border-outline-variant/30" onclick="openApp('auth')">
-          <div class="w-10 h-10 bg-primary/10 rounded-xl flex items-center justify-center"><span class="material-symbols-outlined text-primary fill">gpp_good</span></div>
-          <div><p class="font-bold text-sm text-on-surface">Authenticator</p><p class="text-xs text-on-surface-variant mt-0.5">2FA codes</p></div>
-          <span class="text-xs text-primary font-semibold flex items-center gap-1">Openen <span class="material-symbols-outlined text-sm">arrow_forward</span></span>
-        </div>
-        <div class="app-card bg-surface rounded-2xl p-4 flex flex-col gap-3 cursor-pointer border border-outline-variant/30" onclick="openApp('scheepslog')">
-          <div class="w-10 h-10 bg-primary/10 rounded-xl flex items-center justify-center"><span class="material-symbols-outlined text-primary fill">book</span></div>
-          <div><p class="font-bold text-sm text-on-surface">Scheepslog</p><p class="text-xs text-on-surface-variant mt-0.5">Dagboek & stemming</p></div>
-          <span class="text-xs text-primary font-semibold flex items-center gap-1">Openen <span class="material-symbols-outlined text-sm">arrow_forward</span></span>
-        </div>
-        <div class="app-card bg-surface rounded-2xl p-4 flex flex-col gap-3 cursor-pointer border border-outline-variant/30" onclick="openApp('schatkist')">
-          <div class="w-10 h-10 bg-primary/10 rounded-xl flex items-center justify-center"><span class="material-symbols-outlined text-primary fill">account_balance_wallet</span></div>
-          <div><p class="font-bold text-sm text-on-surface">Schatkist</p><p class="text-xs text-on-surface-variant mt-0.5">Budget planner</p></div>
-          <span class="text-xs text-primary font-semibold flex items-center gap-1">Openen <span class="material-symbols-outlined text-sm">arrow_forward</span></span>
-        </div>
-        <div class="app-card bg-surface rounded-2xl p-4 flex flex-col gap-3 cursor-pointer border border-outline-variant/30" onclick="openApp('kustwacht')">
-          <div class="w-10 h-10 bg-primary/10 rounded-xl flex items-center justify-center"><span class="material-symbols-outlined text-primary fill">wb_sunny</span></div>
-          <div><p class="font-bold text-sm text-on-surface">KustWacht</p><p class="text-xs text-on-surface-variant mt-0.5">Weer & getijden</p></div>
-          <span class="text-xs text-primary font-semibold flex items-center gap-1">Openen <span class="material-symbols-outlined text-sm">arrow_forward</span></span>
-        </div>
-        <div class="app-card bg-surface rounded-2xl p-4 flex flex-col gap-3 cursor-pointer border border-outline-variant/30" onclick="openApp('muziek')">
-          <div class="w-10 h-10 bg-primary/10 rounded-xl flex items-center justify-center"><span class="material-symbols-outlined text-primary fill">music_note</span></div>
-          <div><p class="font-bold text-sm text-on-surface">PP Player</p><p class="text-xs text-on-surface-variant mt-0.5">Muziekspeler</p></div>
-          <span class="text-xs text-primary font-semibold flex items-center gap-1">Openen <span class="material-symbols-outlined text-sm">arrow_forward</span></span>
-        </div>
-      </div>
-    </div>
+      const copy = uiCopy[currentLocale];
+      Object.entries(copy).forEach(([key, value]) => {
+        const node = document.getElementById(key);
+        if (node) {
+          node.textContent = value;
+        }
+      });
 
-    <!-- Account acties -->
-    <div class="bg-surface rounded-2xl divide-y divide-outline-variant/30 border border-outline-variant/40">
-      <button onclick="showPage('pro')" class="w-full p-4 flex items-center gap-3 hover:bg-surface-container transition-colors rounded-t-2xl text-left">
-        <span class="material-symbols-outlined text-primary fill">workspace_premium</span>
-        <div class="flex-1"><p class="font-semibold text-sm text-on-surface">Upgrade naar Pro</p><p class="text-xs text-on-surface-variant">Alle apps, geen advertenties</p></div>
-        <span class="material-symbols-outlined text-on-surface-variant">chevron_right</span>
-      </button>
-      <button onclick="showPage('instellingen')" class="w-full p-4 flex items-center gap-3 hover:bg-surface-container transition-colors text-left">
-        <span class="material-symbols-outlined text-primary">settings</span>
-        <div class="flex-1"><p class="font-semibold text-sm text-on-surface">Accountinstellingen</p><p class="text-xs text-on-surface-variant">Profiel, wachtwoord, notificaties</p></div>
-        <span class="material-symbols-outlined text-on-surface-variant">chevron_right</span>
-      </button>
-      <button onclick="doLogout()" class="w-full p-4 flex items-center gap-3 hover:bg-surface-container transition-colors rounded-b-2xl text-left">
-        <span class="material-symbols-outlined text-error">logout</span>
-        <p class="font-semibold text-sm text-error">Uitloggen</p>
-      </button>
-    </div>
-  </main>
-</div>
+      if (currentCatalog) {
+        renderApps(currentCatalog.locales?.[currentLocale] ?? []);
+      }
+    }
 
-<!-- ===== PAGE: PRO ===== -->
-<div id="page-pro" class="page">
-  <main class="flex-grow w-full max-w-md mx-auto px-5 pt-6 pb-32 flex flex-col gap-5">
-    <button onclick="showPage('dashboard')" class="flex items-center gap-2 text-primary text-sm font-semibold">
-      <span class="material-symbols-outlined text-lg">arrow_back</span> Terug
-    </button>
+    function getOpenUrl(app) {
+      if (app.routes.canonicalWebUrl) {
+        return app.routes.canonicalWebUrl;
+      }
+      if (app.routes.legacyWebDomain) {
+        return app.routes.legacyWebDomain;
+      }
+      return "";
+    }
 
-    <!-- Hero -->
-    <div class="bg-primary rounded-2xl p-6 text-white relative overflow-hidden">
-      <div class="absolute -right-8 -top-8 w-32 h-32 bg-white/10 rounded-full blur-2xl"></div>
-      <div class="absolute -left-8 -bottom-8 w-24 h-24 bg-black/10 rounded-full blur-xl"></div>
-      <div class="relative z-10">
-        <div class="flex items-center gap-2 mb-3">
-          <span class="material-symbols-outlined fill text-2xl">workspace_premium</span>
-          <span class="font-bold text-lg">PixelPiraterij Pro</span>
-        </div>
-        <p class="text-white/80 text-sm">Eén abonnement. Alle 10 apps. Geen advertenties.</p>
-        <div class="mt-4 flex items-end gap-2">
-          <span class="text-4xl font-bold">€9,99</span>
-          <span class="text-white/70 text-sm mb-1">/ eenmalig (Lifetime)</span>
-        </div>
-        <p class="text-xs text-white/60 mt-1">Of €2,99/maand per app afzonderlijk</p>
-      </div>
-    </div>
+    function renderApps(apps) {
+      const copy = uiCopy[currentLocale];
+      appGrid.innerHTML = apps.map((app) => {
+        const openUrl = getOpenUrl(app);
+        const detailUrl = app.routes.canonicalWebUrl || "#";
+        const webMode = app.status.legacyWeb === "live" ? copy.webModeLegacy : copy.webModeHub;
+        const actionLabel = openUrl ? copy.openWeb : copy.soon;
+        const actionHref = openUrl || "#";
+        const body = app.description || app.tagline || "";
+        const category = toTitleCase(app.category);
 
-    <!-- Voordelen -->
-    <div class="flex flex-col gap-3">
-      <h2 class="font-bold text-on-surface">Wat krijg je?</h2>
-      <div class="grid grid-cols-1 gap-3">
-        <div class="bg-surface rounded-2xl p-4 flex items-start gap-3 border border-outline-variant/40">
-          <div class="w-10 h-10 bg-primary/10 rounded-xl flex items-center justify-center shrink-0"><span class="material-symbols-outlined text-primary fill">block</span></div>
-          <div><p class="font-bold text-sm text-on-surface">Geen advertenties</p><p class="text-xs text-on-surface-variant mt-0.5">Volledig advertentievrij in alle 10 apps.</p></div>
-        </div>
-        <div class="bg-surface rounded-2xl p-4 flex items-start gap-3 border border-outline-variant/40">
-          <div class="w-10 h-10 bg-primary/10 rounded-xl flex items-center justify-center shrink-0"><span class="material-symbols-outlined text-primary fill">all_inclusive</span></div>
-          <div><p class="font-bold text-sm text-on-surface">Onbeperkte functies</p><p class="text-xs text-on-surface-variant mt-0.5">Vault opslag, scan geschiedenis, statistieken Pro en meer.</p></div>
-        </div>
-        <div class="bg-surface rounded-2xl p-4 flex items-start gap-3 border border-outline-variant/40">
-          <div class="w-10 h-10 bg-primary/10 rounded-xl flex items-center justify-center shrink-0"><span class="material-symbols-outlined text-primary fill">cloud_sync</span></div>
-          <div><p class="font-bold text-sm text-on-surface">Cloud synchronisatie</p><p class="text-xs text-on-surface-variant mt-0.5">Je data gesynchroniseerd op al je apparaten.</p></div>
-        </div>
-        <div class="bg-surface rounded-2xl p-4 flex items-start gap-3 border border-outline-variant/40">
-          <div class="w-10 h-10 bg-primary/10 rounded-xl flex items-center justify-center shrink-0"><span class="material-symbols-outlined text-primary fill">support_agent</span></div>
-          <div><p class="font-bold text-sm text-on-surface">Prioriteit support</p><p class="text-xs text-on-surface-variant mt-0.5">Directe hulp van de PixelPiraterij crew.</p></div>
-        </div>
-      </div>
-    </div>
+        return `
+          <article class="app-card">
+            <div>
+              <div class="app-card-top">
+                <div class="app-icon"><img src="${app.iconPath}" alt="${app.title} icoon" /></div>
+                <div class="app-badge">${category}</div>
+              </div>
+              <p class="card-tag" style="margin-top:18px;">${webMode}</p>
+              <h3 class="app-title">${app.title}</h3>
+              <p class="card-body">${body}</p>
+              <div class="app-meta">
+                <span class="meta-pill">${copy.platformLabel}</span>
+                <span class="meta-pill">${copy.statusLabel}: ${app.status.label}</span>
+              </div>
+            </div>
+            <div class="app-links">
+              <span class="status-pill"><span class="status-dot"></span>${app.shortStatus}</span>
+              <div class="card-actions">
+                <a class="card-link" href="${detailUrl}">${copy.details}</a>
+                <a class="card-link" href="${actionHref}" ${openUrl ? 'target="_blank" rel="noreferrer"' : 'aria-disabled="true"'}>${actionLabel}</a>
+              </div>
+            </div>
+          </article>
+        `;
+      }).join("");
+    }
 
-    <!-- Prijsopties -->
-    <div class="flex flex-col gap-3">
-      <div id="plan-lifetime" onclick="selectPlan('lifetime')" class="bg-surface border-2 border-primary rounded-2xl p-4 cursor-pointer transition-all relative">
-        <div class="absolute -top-2 right-4 bg-primary text-white text-xs font-bold px-3 py-1 rounded-full">Beste waarde</div>
-        <div class="flex justify-between items-start">
-          <div><p class="font-bold text-on-surface">Lifetime Bundle</p><p class="text-xs text-on-surface-variant mt-0.5">Alle 10 apps, voor altijd</p></div>
-          <div class="text-right"><p class="text-xl font-bold text-primary">€9,99</p><p class="text-xs text-on-surface-variant">eenmalig</p></div>
-        </div>
-      </div>
-      <div id="plan-monthly" onclick="selectPlan('monthly')" class="bg-surface border border-outline-variant rounded-2xl p-4 cursor-pointer transition-all">
-        <div class="flex justify-between items-start">
-          <div><p class="font-bold text-on-surface">Maandelijks</p><p class="text-xs text-on-surface-variant mt-0.5">Alle 10 apps, maandelijks opzegbaar</p></div>
-          <div class="text-right"><p class="text-xl font-bold text-primary">€1,99</p><p class="text-xs text-on-surface-variant">/ maand</p></div>
-        </div>
-      </div>
-    </div>
+    async function loadCatalog() {
+      try {
+        const response = await fetch("./catalog.json", { cache: "no-store" });
+        if (!response.ok) {
+          throw new Error(`Catalog request failed with ${response.status}`);
+        }
+        const catalog = await response.json();
+        currentCatalog = catalog;
+        renderApps(catalog.locales?.[currentLocale] ?? []);
+      } catch (error) {
+        console.error("Kon catalog.json niet laden", error);
+        appGrid.innerHTML = `
+          <article class="app-card">
+            <div>
+              <div class="app-card-top">
+                <div class="app-icon">!!</div>
+                <div class="app-badge">Catalogus</div>
+              </div>
+              <p class="card-tag" style="margin-top:18px;">Fout</p>
+              <h3 class="app-title">Catalogus niet geladen</h3>
+              <p class="card-body">De hub kon de gedeelde productcatalogus niet laden. Draai eerst de export vanuit shared-product opnieuw.</p>
+            </div>
+          </article>
+        `;
+      }
+    }
 
-    <!-- Koop knop -->
-    <button onclick="doPurchase()" class="w-full bg-primary text-white font-bold h-14 rounded-2xl hover:bg-primary-dark transition-all active:scale-95 shadow-lg text-lg flex items-center justify-center gap-2">
-      <span class="material-symbols-outlined fill">workspace_premium</span>
-      Nu upgraden
-    </button>
-    <p class="text-xs text-center text-on-surface-variant">Veilig betalen · 30 dagen geld-terug-garantie · Geen verborgen kosten</p>
-  </main>
-</div>
+    localeButtons.forEach((button) => {
+      button.addEventListener("click", () => applyLocale(button.dataset.localeOption));
+    });
 
-<!-- ===== PAGE: INSTELLINGEN ===== -->
-<div id="page-instellingen" class="page">
-  <main class="flex-grow w-full max-w-md mx-auto px-5 pt-6 pb-32 flex flex-col gap-5">
-    <div class="flex items-center gap-3">
-      <button onclick="showPage('dashboard')" class="w-10 h-10 flex items-center justify-center rounded-xl hover:bg-surface transition-colors text-primary">
-        <span class="material-symbols-outlined">arrow_back</span>
-      </button>
-      <h1 class="text-2xl font-bold text-primary">Instellingen</h1>
-    </div>
+    themeButtons.forEach((button) => {
+      button.addEventListener("click", () => applyTheme(button.dataset.themeOption));
+    });
 
-    <!-- Profiel bewerken -->
-    <div class="bg-surface rounded-2xl p-5 flex flex-col gap-4 border border-outline-variant/40">
-      <p class="font-bold text-sm text-on-surface">Profiel</p>
-      <div class="flex flex-col gap-3">
-        <input id="edit-name" type="text" placeholder="Naam"
-          class="w-full bg-white text-on-surface rounded-xl px-4 py-3 border border-outline-variant focus:border-primary outline-none text-sm"/>
-        <input id="edit-email" type="email" placeholder="E-mailadres"
-          class="w-full bg-white text-on-surface rounded-xl px-4 py-3 border border-outline-variant focus:border-primary outline-none text-sm"/>
-        <button onclick="saveProfile()" class="w-full bg-primary text-white font-bold h-11 rounded-xl hover:bg-primary-dark transition-all active:scale-95 text-sm">Opslaan</button>
-      </div>
-    </div>
-
-    <div class="bg-surface rounded-2xl divide-y divide-outline-variant/30 border border-outline-variant/40">
-      <div class="p-4 flex items-center justify-between">
-        <div class="flex items-center gap-3"><span class="material-symbols-outlined text-primary">dark_mode</span><p class="text-sm font-semibold text-on-surface">Donker thema</p></div>
-        <label class="toggle"><input type="checkbox" id="toggle-dark-setting" onchange="toggleDarkFromSetting(this.checked)"/><span class="toggle-slider"></span></label>
-      </div>
-      <div class="p-4 flex items-center justify-between">
-        <div class="flex items-center gap-3"><span class="material-symbols-outlined text-primary">notifications</span><p class="text-sm font-semibold text-on-surface">Meldingen</p></div>
-        <label class="toggle"><input type="checkbox" id="toggle-notif" checked/><span class="toggle-slider"></span></label>
-      </div>
-    </div>
-
-    <div class="bg-surface rounded-2xl border border-outline-variant/40 p-5 text-center">
-      <p class="font-bold text-primary">PixelPiraterij Hub</p>
-      <p class="text-xs text-on-surface-variant mt-1">v1.0 · info@kunstvanvb.nl</p>
-      <div class="flex justify-center gap-4 mt-3">
-        <span class="text-xs text-primary cursor-pointer hover:underline">Privacybeleid</span>
-        <span class="text-xs text-primary cursor-pointer hover:underline">Voorwaarden</span>
-        <span class="text-xs text-primary cursor-pointer hover:underline">Support</span>
-      </div>
-    </div>
-
-    <button onclick="doLogout()" class="w-full bg-surface text-error font-bold h-12 rounded-xl border border-error/20 hover:bg-error/5 transition-all active:scale-95 text-sm flex items-center justify-center gap-2">
-      <span class="material-symbols-outlined text-lg">logout</span> Uitloggen
-    </button>
-  </main>
-</div>
-
-<!-- BOTTOM NAV (alleen zichtbaar wanneer ingelogd) -->
-<nav id="main-nav" class="hidden fixed bottom-0 left-0 w-full z-50 bg-background/95 backdrop-blur-lg border-t border-outline-variant/40">
-  <div class="flex justify-around items-center px-4 pb-4 pt-2 max-w-2xl mx-auto">
-    <button onclick="showPage('dashboard')" data-page="dashboard" class="nav-btn flex flex-col items-center gap-1 px-5 py-2 rounded-xl transition-all active:scale-90">
-      <span class="material-symbols-outlined text-2xl">home</span>
-      <span class="text-[11px] font-semibold">Mijn Apps</span>
-    </button>
-    <button onclick="showPage('pro')" data-page="pro" class="nav-btn flex flex-col items-center gap-1 px-5 py-2 rounded-xl transition-all active:scale-90">
-      <span class="material-symbols-outlined text-2xl">workspace_premium</span>
-      <span class="text-[11px] font-semibold">Pro</span>
-    </button>
-    <button onclick="showPage('instellingen')" data-page="instellingen" class="nav-btn flex flex-col items-center gap-1 px-5 py-2 rounded-xl transition-all active:scale-90">
-      <span class="material-symbols-outlined text-2xl">person</span>
-      <span class="text-[11px] font-semibold">Profiel</span>
-    </button>
-  </div>
-</nav>
-
-<script>
-// App URLs (update these when you have custom domains)
-const APP_URLS = {
-  qr: 'https://qr.pixelpiraterij.online',
-  wachtwoord: 'https://wachtwoord.pixelpiraterij.online',
-  calmguard: 'https://calmguard.pixelpiraterij.online',
-  calmread: 'https://calmread.pixelpiraterij.online',
-  focus: 'https://focus.pixelpiraterij.online',
-  auth: 'https://auth.pixelpiraterij.online',
-  scheepslog: 'https://scheepslog.pixelpiraterij.online',
-  schatkist: 'https://schatkist.pixelpiraterij.online',
-  kustwacht: 'https://kustwacht.pixelpiraterij.online',
-  muziek: 'https://muziek.pixelpiraterij.online',
-};
-
-let user = JSON.parse(localStorage.getItem('pp-user') || 'null');
-let selectedPlan = 'lifetime';
-
-function showPage(page) {
-  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
-  document.getElementById('page-' + page).classList.add('active');
-  const nav = document.getElementById('main-nav');
-  nav.classList.toggle('hidden', ['login','register'].includes(page));
-  document.querySelectorAll('.nav-btn').forEach(btn => {
-    const active = btn.dataset.page === page;
-    btn.classList.toggle('bg-primary', active);
-    btn.classList.toggle('text-white', active);
-    btn.classList.toggle('text-on-surface-variant', !active);
-  });
-  window.scrollTo(0,0);
-}
-
-function doLogin() {
-  const email = document.getElementById('login-email').value.trim();
-  const pass = document.getElementById('login-pass').value;
-  if (!email || !pass) { showToast('Vul alle velden in'); return; }
-  // Simulated login
-  user = { name: email.split('@')[0], email, pro: false };
-  localStorage.setItem('pp-user', JSON.stringify(user));
-  loadUserUI();
-  showPage('dashboard');
-  showToast('Welkom terug!');
-}
-
-function doGoogleLogin() {
-  user = { name: 'Google Gebruiker', email: 'gebruiker@gmail.com', pro: false };
-  localStorage.setItem('pp-user', JSON.stringify(user));
-  loadUserUI();
-  showPage('dashboard');
-  showToast('Ingelogd met Google');
-}
-
-function doRegister() {
-  const name = document.getElementById('reg-name').value.trim();
-  const email = document.getElementById('reg-email').value.trim();
-  const pass = document.getElementById('reg-pass').value;
-  if (!name || !email || pass.length < 8) { showToast('Vul alle velden correct in (wachtwoord min. 8 tekens)'); return; }
-  user = { name, email, pro: false };
-  localStorage.setItem('pp-user', JSON.stringify(user));
-  loadUserUI();
-  showPage('dashboard');
-  showToast(`Welkom ${name}! Je account is aangemaakt.`);
-}
-
-function doLogout() {
-  user = null;
-  localStorage.removeItem('pp-user');
-  showPage('login');
-  showToast('Uitgelogd');
-}
-
-function loadUserUI() {
-  if (!user) return;
-  document.getElementById('profile-name').textContent = user.name;
-  document.getElementById('profile-email').textContent = user.email;
-  document.getElementById('avatar-letter').textContent = user.name.charAt(0).toUpperCase();
-  const badge = document.getElementById('plan-badge');
-  if (user.pro) {
-    badge.textContent = '✦ Pro';
-    badge.className = 'text-xs font-semibold px-2 py-0.5 rounded-full pro-badge';
-  } else {
-    badge.textContent = 'Gratis plan';
-    badge.className = 'text-xs bg-surface-container text-on-surface-variant font-semibold px-2 py-0.5 rounded-full';
-  }
-  document.getElementById('edit-name').value = user.name;
-  document.getElementById('edit-email').value = user.email;
-}
-
-function saveProfile() {
-  const name = document.getElementById('edit-name').value.trim();
-  const email = document.getElementById('edit-email').value.trim();
-  if (!name || !email) { showToast('Vul alle velden in'); return; }
-  user.name = name; user.email = email;
-  localStorage.setItem('pp-user', JSON.stringify(user));
-  loadUserUI();
-  showToast('Profiel opgeslagen');
-}
-
-function openApp(key) {
-  const url = APP_URLS[key];
-  if (url) window.open(url, '_blank');
-}
-
-function selectPlan(plan) {
-  selectedPlan = plan;
-  document.getElementById('plan-lifetime').className = plan === 'lifetime'
-    ? 'bg-surface border-2 border-primary rounded-2xl p-4 cursor-pointer transition-all relative'
-    : 'bg-surface border border-outline-variant rounded-2xl p-4 cursor-pointer transition-all relative';
-  document.getElementById('plan-monthly').className = plan === 'monthly'
-    ? 'bg-surface border-2 border-primary rounded-2xl p-4 cursor-pointer transition-all'
-    : 'bg-surface border border-outline-variant rounded-2xl p-4 cursor-pointer transition-all';
-}
-
-function doPurchase() {
-  const price = selectedPlan === 'lifetime' ? '€9,99' : '€1,99/maand';
-  showToast(`Betaling van ${price} verwerkt! 🎉`);
-  setTimeout(() => {
-    if (user) { user.pro = true; localStorage.setItem('pp-user', JSON.stringify(user)); loadUserUI(); }
-    showPage('dashboard');
-  }, 1500);
-}
-
-function toggleDark() {
-  const dark = document.documentElement.classList.toggle('dark');
-  document.getElementById('dark-icon').textContent = dark ? 'light_mode' : 'dark_mode';
-  const setting = document.getElementById('toggle-dark-setting');
-  if (setting) setting.checked = dark;
-  localStorage.setItem('pp-theme', dark ? 'dark' : 'light');
-}
-
-function toggleDarkFromSetting(enabled) {
-  document.documentElement.classList.toggle('dark', enabled);
-  document.getElementById('dark-icon').textContent = enabled ? 'light_mode' : 'dark_mode';
-  localStorage.setItem('pp-theme', enabled ? 'dark' : 'light');
-}
-
-function showToast(msg) {
-  const t = document.getElementById('toast');
-  t.textContent = msg; t.classList.add('show');
-  setTimeout(() => t.classList.remove('show'), 2500);
-}
-
-document.addEventListener('DOMContentLoaded', () => {
-  if (localStorage.getItem('pp-theme') === 'dark') {
-    document.documentElement.classList.add('dark');
-    document.getElementById('dark-icon').textContent = 'light_mode';
-    const s = document.getElementById('toggle-dark-setting');
-    if (s) s.checked = true;
-  }
-  user = JSON.parse(localStorage.getItem('pp-user') || 'null');
-  if (user) { loadUserUI(); showPage('dashboard'); }
-  else showPage('login');
-});
-</script>
+    applyTheme(localStorage.getItem("pp-hub-theme") || document.documentElement.dataset.theme);
+    applyLocale(currentLocale);
+    loadCatalog();
+  </script>
 </body>
 </html>

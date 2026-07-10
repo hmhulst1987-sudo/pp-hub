@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="nl" data-theme="night">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#121722" />
+  <title>Horizon | PixelPiraterij Hub</title>
+  <meta name="description" content="Een utility rond planning, richting en het scherp houden van de volgende stap." />
+  <link rel="canonical" href="https://hub.pixelpiraterij.online/apps/horizon" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="PixelPiraterij Hub" />
+  <meta property="og:locale" content="nl_NL" />
+  <meta property="og:title" content="Horizon | PixelPiraterij Hub" />
+  <meta property="og:description" content="Een utility rond planning, richting en het scherp houden van de volgende stap." />
+  <meta property="og:url" content="https://hub.pixelpiraterij.online/apps/horizon" />
+  <meta property="og:image" content="https://hub.pixelpiraterij.online/assets/apps/horizon.png" />
+  <meta property="og:image:type" content="image/png" />
+  <meta property="og:image:width" content="512" />
+  <meta property="og:image:height" content="512" />
+  <meta property="og:image:alt" content="Horizon appicoon" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Horizon | PixelPiraterij Hub" />
+  <meta name="twitter:description" content="Een utility rond planning, richting en het scherp houden van de volgende stap." />
+  <meta name="twitter:image" content="https://hub.pixelpiraterij.online/assets/apps/horizon.png" />
+  <link rel="icon" type="image/svg+xml" href="/assets/site/pixelpiraterij-mark.svg" />
+  <link rel="apple-touch-icon" href="/assets/site/pixelpiraterij-mark.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Manrope:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  />
+  <script>
+    (() => {
+      const stored = localStorage.getItem("pp-hub-theme");
+      document.documentElement.dataset.theme = stored === "sand" ? "sand" : "night";
+    })();
+  </script>
+  <style>
+    :root {
+      --canvas: #121722;
+      --panel: #181f2c;
+      --panel-2: #20283a;
+      --line: rgba(255, 255, 255, 0.08);
+      --line-strong: rgba(255, 255, 255, 0.16);
+      --text: #f3efe8;
+      --soft: #bac3d1;
+      --muted: #8d97ab;
+      --signal: #d85b3d;
+      --signal-2: #ecb560;
+      --ok: #64c08a;
+      --shadow: 0 24px 60px rgba(0, 0, 0, 0.28);
+    }
+
+    html[data-theme="sand"] {
+      --canvas: #efe2d2;
+      --panel: #f8f0e5;
+      --panel-2: #f2e7da;
+      --line: rgba(22, 30, 43, 0.08);
+      --line-strong: rgba(22, 30, 43, 0.16);
+      --text: #171d27;
+      --soft: #435066;
+      --muted: #6d788c;
+      --signal: #d85b3d;
+      --signal-2: #b88c3a;
+      --ok: #2f7b53;
+      --shadow: 0 24px 60px rgba(41, 30, 14, 0.12);
+    }
+
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      color: var(--text);
+      font-family: "Manrope", system-ui, sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(216, 91, 61, 0.10), transparent 26rem),
+        radial-gradient(circle at top right, rgba(236, 181, 96, 0.08), transparent 22rem),
+        var(--canvas);
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      opacity: 0.045;
+      background-image: linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px);
+      background-size: 36px 36px;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    .shell { width: min(92rem, calc(100% - 32px)); margin: 0 auto; padding: 18px 0 36px; }
+    .panel {
+      border: 1px solid var(--line);
+      border-radius: 28px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(18px);
+    }
+    .topbar { padding: 20px 22px; display: flex; justify-content: space-between; gap: 16px; align-items: center; flex-wrap: wrap; }
+    .nav-links { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; }
+    .brand-lockup { display: flex; gap: 14px; align-items: center; }
+    .brand-mark {
+      width: 56px; height: 56px; display: grid; place-items: center;
+      border: 1px solid var(--line-strong); background: rgba(255,255,255,0.02);
+      overflow: hidden;
+    }
+    .brand-mark img, .icon-chip img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .eyebrow, .pill, .meta-key {
+      margin: 0;
+      color: var(--signal-2);
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 12px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+    }
+    .nav-link, .nav-cta, .hero-btn {
+      min-height: 48px;
+      padding: 0 18px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid var(--line-strong);
+      background: rgba(255,255,255,0.02);
+      transition: border-color 160ms ease, transform 160ms ease, background 160ms ease;
+    }
+    .nav-link:hover, .nav-cta:hover, .hero-btn:hover {
+      transform: translateY(-1px);
+      border-color: rgba(216, 91, 61, 0.42);
+      background: rgba(255,255,255,0.04);
+    }
+    .nav-cta, .hero-btn.is-primary {
+      background: rgba(216, 91, 61, 0.14);
+      border-color: rgba(216, 91, 61, 0.52);
+    }
+    .hero {
+      margin-top: 18px;
+      padding: clamp(24px, 4vw, 40px);
+      display: grid;
+      grid-template-columns: minmax(0, 1.15fr) minmax(280px, 0.85fr);
+      gap: 18px;
+    }
+    .hero-title {
+      margin: 18px 0;
+      font-size: clamp(40px, 7vw, 84px);
+      line-height: 0.92;
+      letter-spacing: -0.08em;
+      max-width: 10ch;
+    }
+    .body-copy, .meta-value, .list-copy, .footer-copy {
+      color: var(--soft);
+      line-height: 1.78;
+      font-size: 16px;
+    }
+    .hero-actions, .meta-actions { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 26px; }
+    .hero-grid, .detail-grid { display: grid; gap: 18px; }
+    .detail-grid {
+      margin-top: 18px;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    }
+    .card {
+      padding: 24px;
+    }
+    .section-title {
+      margin: 0 0 12px;
+      font-size: clamp(24px, 3.8vw, 44px);
+      line-height: 0.98;
+      letter-spacing: -0.06em;
+    }
+    .icon-chip {
+      width: 62px; height: 62px; display: grid; place-items: center;
+      border: 1px solid rgba(216, 91, 61, 0.32);
+      background: rgba(216, 91, 61, 0.16);
+      font-size: 20px; font-weight: 800;
+    }
+    .meta-board { display: grid; gap: 16px; }
+    .meta-stack {
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,0.02);
+      padding: 16px 18px;
+    }
+    .meta-value, .meta-link { display: block; margin-top: 8px; word-break: break-word; }
+    .pill-row { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; }
+    .control-cluster {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px;
+      border: 1px solid var(--line-strong);
+      background: rgba(255,255,255,0.02);
+    }
+    .control-option {
+      min-height: 40px;
+      padding: 0 14px;
+      border: 1px solid transparent;
+      background: transparent;
+      color: var(--muted);
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 12px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      cursor: pointer;
+    }
+    .control-option.is-active {
+      color: var(--text);
+      border-color: rgba(216, 91, 61, 0.44);
+      background: rgba(216, 91, 61, 0.14);
+    }
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      min-height: 34px;
+      padding: 0 12px;
+      border: 1px solid var(--line-strong);
+      background: rgba(255,255,255,0.02);
+    }
+    ul.feature-list {
+      margin: 18px 0 0;
+      padding-left: 18px;
+      color: var(--soft);
+      line-height: 1.8;
+    }
+    .footer-note { margin-top: 18px; color: var(--muted); font-size: 14px; }
+    @media (max-width: 980px) {
+      .hero, .detail-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 640px) {
+      .shell { width: min(100% - 18px, 92rem); }
+      .topbar, .hero, .card { padding: 22px; }
+      .hero-title { max-width: none; }
+    }
+  </style>
+</head>
+<body>
+  <main class="shell">
+    <header class="panel topbar">
+      <a class="brand-lockup" href="/" aria-label="Terug naar PixelPiraterij Hub">
+        <div class="brand-mark"><img src="/assets/site/pixelpiraterij-mark.svg" alt="PixelPiraterij merkicoon" /></div>
+        <div>
+          <p class="eyebrow" id="brandEyebrow">PixelPiraterij app detail</p>
+          <p style="margin:2px 0 0;font-size:22px;font-weight:800;" id="brandTitle">Horizon</p>
+        </div>
+      </a>
+      <div class="nav-links">
+        <a class="nav-link" href="/">Hub</a>
+        <div class="control-cluster" aria-label="Thema kiezen">
+          <button class="control-option" type="button" data-theme-option="sand">Sand</button>
+          <button class="control-option" type="button" data-theme-option="night">Night</button>
+        </div>
+        <div class="control-cluster" aria-label="Taal kiezen">
+          <button class="control-option" type="button" data-locale-option="nl">NL</button>
+          <button class="control-option" type="button" data-locale-option="en">EN</button>
+        </div>
+        <a class="nav-cta" href="https://pixelpiraterij.online" target="_blank" rel="noreferrer">.online</a>
+      </div>
+    </header>
+
+    <section class="panel hero">
+      <div class="hero-grid">
+        <p class="eyebrow" id="heroEyebrow">Lifestyle / Suite route</p>
+        <h1 class="hero-title" id="heroTitle">Horizon</h1>
+        <p class="body-copy" id="heroDescription">Een utility rond planning, richting en het scherp houden van de volgende stap.</p>
+        <div class="pill-row">
+          <span class="pill" id="statusPrimary">Gepland voor de nieuwe hub-runtime.</span>
+          <span class="pill" id="statusSecondary">Nieuwe hubroute in opbouw</span>
+          <span class="pill" id="statusPlatform">Android + Web</span>
+        </div>
+        <div class="hero-actions">
+          <a class="hero-btn is-primary" id="openWebButton" href="https://hub.pixelpiraterij.online/apps/horizon" target="_blank" rel="noreferrer">Open webroute</a>
+          <a class="hero-btn" id="playStoreButton" href="#" aria-disabled="true">Play Store volgt later</a>
+        </div>
+      </div>
+
+      <aside class="panel card" style="padding:24px;">
+        <div class="icon-chip"><img src="/assets/apps/horizon.png" alt="Horizon app icoon" /></div>
+        <p class="eyebrow" style="margin-top:18px;" id="onboardingEyebrow">Onboarding</p>
+        <h2 class="section-title" id="onboardingTitle">Houd de volgende stap zichtbaar.</h2>
+        <p class="body-copy" id="onboardingTagline">Ruimte voor vooruitkijken.</p>
+        <div class="pill-row">
+          <span class="pill" id="freeLabel">Basis planning</span>
+          <span class="pill" id="proLabel">Geavanceerde roadmaps en weergaven</span>
+        </div>
+      </aside>
+    </section>
+
+    <section class="detail-grid">
+      <article class="panel card">
+        <p class="eyebrow" id="routeEyebrow">Route en platform</p>
+        <h2 class="section-title" id="routeTitle">Waar deze app nu leeft.</h2>
+        <div class="meta-board">
+          <div class="meta-stack">
+            <span class="meta-key" id="canonicalKey">Canonieke hubroute</span>
+            <span class="meta-value">https://hub.pixelpiraterij.online/apps/horizon</span>
+          </div>
+          <div class="meta-stack">
+            <span class="meta-key" id="androidKey">Android package</span>
+            <span class="meta-value">online.pixelpiraterij.horizon</span>
+          </div>
+          <div class="meta-stack">
+            <span class="meta-key" id="releaseKey">Release track</span>
+            <span class="meta-value">pre_playstore</span>
+          </div>
+          
+        </div>
+      </article>
+
+      <article class="panel card">
+        <p class="eyebrow" id="featureEyebrow">Functionaliteit</p>
+        <h2 class="section-title" id="featureTitle">De kern van deze app.</h2>
+        <p class="list-copy" id="featureBody">Deze pagina wordt gevoed vanuit dezelfde productlaag als Android en de hubcatalogus. Daarmee kunnen copy, routes en status synchroon blijven terwijl de webversie doorgroeit.</p>
+        <div class="pill-row">
+          <span class="pill" id="freeSummary">Gratis: Basis planning</span>
+          <span class="pill" id="proSummary">Pro: Geavanceerde roadmaps en weergaven</span>
+        </div>
+        <ul class="feature-list">
+          <li>Goal View</li><li>Timeline</li><li>Next Step Focus</li>
+        </ul>
+      </article>
+    </section>
+
+    <section class="detail-grid">
+      <article class="panel card">
+        <p class="eyebrow" id="freeEyebrow">Free laag</p>
+        <h2 class="section-title" id="freeTitle">Wat direct bruikbaar is.</h2>
+        <ul class="feature-list">
+          <li>Basic Planning</li><li>Simple Tracking</li>
+        </ul>
+      </article>
+
+      <article class="panel card">
+        <p class="eyebrow" id="proEyebrow">Pro laag</p>
+        <h2 class="section-title" id="proTitle">Wat later opgeschaald kan worden.</h2>
+        <ul class="feature-list">
+          <li>Advanced Roadmaps</li><li>Extended Views</li>
+        </ul>
+      </article>
+    </section>
+
+    <section class="panel card" style="margin-top:18px;">
+      <p class="eyebrow" id="bridgeEyebrow">Data en volgende stap</p>
+      <h2 class="section-title" id="bridgeTitle">De brug tussen app en web staat klaar.</h2>
+      <p class="footer-copy" id="bridgeBody">Volgende stap is om onder deze route de echte webfunctionaliteit te hangen, zodat de detailpagina de schakel wordt tussen uitleg, openen en uiteindelijke browser-gebruikservaring.</p>
+      <p class="footer-note" id="sourceNote">Source of truth: shared-product -> hub detail generator -> /apps/horizon/</p>
+    </section>
+  </main>
+
+  <script>
+    const pageCopy = {"nl":{"eyebrow":"Lifestyle / Suite route","title":"Horizon","description":"Een utility rond planning, richting en het scherp houden van de volgende stap.","shortStatus":"Gepland voor de nieuwe hub-runtime.","routeStatus":"Nieuwe hubroute in opbouw","platform":"Android + Web","openWebRoute":"Open webroute","playStore":"Play Store volgt later","onboardingEyebrow":"Onboarding","onboardingTitle":"Houd de volgende stap zichtbaar.","tagline":"Ruimte voor vooruitkijken.","freeLabel":"Basis planning","proLabel":"Geavanceerde roadmaps en weergaven","routeEyebrow":"Route en platform","routeTitle":"Waar deze app nu leeft.","canonicalKey":"Canonieke hubroute","androidKey":"Android package","releaseKey":"Release track","legacyKey":"Legacy web","featureEyebrow":"Functionaliteit","featureTitle":"De kern van deze app.","featureBody":"Deze pagina wordt gevoed vanuit dezelfde productlaag als Android en de hubcatalogus. Daarmee kunnen copy, routes en status synchroon blijven terwijl de webversie doorgroeit.","freeEyebrow":"Free laag","freeTitle":"Wat direct bruikbaar is.","proEyebrow":"Pro laag","proTitle":"Wat later opgeschaald kan worden.","bridgeEyebrow":"Data en volgende stap","bridgeTitle":"De brug tussen app en web staat klaar.","bridgeBody":"Volgende stap is om onder deze route de echte webfunctionaliteit te hangen, zodat de detailpagina de schakel wordt tussen uitleg, openen en uiteindelijke browser-gebruikservaring.","sourceNote":"Source of truth: shared-product -> hub detail generator -> /apps/horizon/"},"en":{"eyebrow":"Lifestyle / Suite route","title":"Horizon","description":"A utility around planning, direction and keeping the next step clear.","shortStatus":"Planned for the new hub runtime.","routeStatus":"New hub route in progress","platform":"Android + Web","openWebRoute":"Open web route","playStore":"Play Store coming later","onboardingEyebrow":"Onboarding","onboardingTitle":"Keep your next step visible.","tagline":"Space to look ahead.","freeLabel":"Basic planning","proLabel":"Advanced roadmaps and views","routeEyebrow":"Route and platform","routeTitle":"Where this app currently lives.","canonicalKey":"Canonical hub route","androidKey":"Android package","releaseKey":"Release track","legacyKey":"Legacy web","featureEyebrow":"Functionality","featureTitle":"The core of this app.","featureBody":"This page is powered by the same product layer as Android and the hub catalog. That keeps copy, routes and status in sync while the web version grows further.","freeEyebrow":"Free layer","freeTitle":"What is usable right away.","proEyebrow":"Pro layer","proTitle":"What can scale later.","bridgeEyebrow":"Data and next step","bridgeTitle":"The bridge between app and web is ready.","bridgeBody":"The next step is to attach the real web functionality under this route, so the detail page becomes the switch between explanation, launch and the eventual browser experience.","sourceNote":"Source of truth: shared-product -> hub detail generator -> /apps/horizon/"}};
+    const localeButtons = Array.from(document.querySelectorAll("[data-locale-option]"));
+    const themeButtons = Array.from(document.querySelectorAll("[data-theme-option]"));
+    const playStoreUrl = "";
+    const playStoreStaticLabel = {
+      nl: "Play Store volgt later",
+      en: "Play Store coming later"
+    };
+
+    function applyTheme(theme) {
+      document.documentElement.dataset.theme = theme === "sand" ? "sand" : "night";
+      localStorage.setItem("pp-hub-theme", document.documentElement.dataset.theme);
+      themeButtons.forEach((button) => {
+        button.classList.toggle("is-active", button.dataset.themeOption === document.documentElement.dataset.theme);
+      });
+    }
+
+    function applyLocale(locale) {
+      const activeLocale = locale === "en" ? "en" : "nl";
+      localStorage.setItem("pp-hub-locale", activeLocale);
+      document.documentElement.lang = activeLocale;
+      localeButtons.forEach((button) => {
+        button.classList.toggle("is-active", button.dataset.localeOption === activeLocale);
+      });
+
+      const copy = pageCopy[activeLocale];
+      document.getElementById("brandTitle").textContent = copy.title;
+      document.getElementById("heroEyebrow").textContent = copy.eyebrow;
+      document.getElementById("heroTitle").textContent = copy.title;
+      document.getElementById("heroDescription").textContent = copy.description;
+      document.getElementById("statusPrimary").textContent = copy.shortStatus;
+      document.getElementById("statusSecondary").textContent = copy.routeStatus;
+      document.getElementById("statusPlatform").textContent = copy.platform;
+      document.getElementById("openWebButton").textContent = copy.openWebRoute;
+      document.getElementById("playStoreButton").textContent = playStoreStaticLabel[activeLocale];
+      document.getElementById("onboardingEyebrow").textContent = copy.onboardingEyebrow;
+      document.getElementById("onboardingTitle").textContent = copy.onboardingTitle;
+      document.getElementById("onboardingTagline").textContent = copy.tagline;
+      document.getElementById("freeLabel").textContent = copy.freeLabel;
+      document.getElementById("proLabel").textContent = copy.proLabel;
+      document.getElementById("routeEyebrow").textContent = copy.routeEyebrow;
+      document.getElementById("routeTitle").textContent = copy.routeTitle;
+      document.getElementById("canonicalKey").textContent = copy.canonicalKey;
+      document.getElementById("androidKey").textContent = copy.androidKey;
+      document.getElementById("releaseKey").textContent = copy.releaseKey;
+      document.getElementById("featureEyebrow").textContent = copy.featureEyebrow;
+      document.getElementById("featureTitle").textContent = copy.featureTitle;
+      document.getElementById("featureBody").textContent = copy.featureBody;
+      document.getElementById("freeSummary").textContent = (activeLocale === "nl" ? "Gratis" : "Free") + ": " + copy.freeLabel;
+      document.getElementById("proSummary").textContent = "Pro: " + copy.proLabel;
+      document.getElementById("freeEyebrow").textContent = copy.freeEyebrow;
+      document.getElementById("freeTitle").textContent = copy.freeTitle;
+      document.getElementById("proEyebrow").textContent = copy.proEyebrow;
+      document.getElementById("proTitle").textContent = copy.proTitle;
+      document.getElementById("bridgeEyebrow").textContent = copy.bridgeEyebrow;
+      document.getElementById("bridgeTitle").textContent = copy.bridgeTitle;
+      document.getElementById("bridgeBody").textContent = copy.bridgeBody;
+      document.getElementById("sourceNote").textContent = copy.sourceNote;
+      document.title = `${copy.title} | PixelPiraterij Hub`;
+    }
+
+    localeButtons.forEach((button) => {
+      button.addEventListener("click", () => applyLocale(button.dataset.localeOption));
+    });
+
+    themeButtons.forEach((button) => {
+      button.addEventListener("click", () => applyTheme(button.dataset.themeOption));
+    });
+
+    applyTheme(localStorage.getItem("pp-hub-theme") || document.documentElement.dataset.theme);
+    applyLocale(localStorage.getItem("pp-hub-locale") || "nl");
+  </script>
+</body>
+</html>
