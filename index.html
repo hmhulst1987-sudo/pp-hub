@@ -36,7 +36,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
-    href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Manrope:wght@400;500;600;700;800&display=swap"
+    href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;700&display=swap"
     rel="stylesheet"
   />
   <script>
@@ -52,6 +52,8 @@
       --panel-2: #20283a;
       --line: rgba(255, 255, 255, 0.08);
       --line-strong: rgba(255, 255, 255, 0.16);
+      --tint: rgba(255, 255, 255, 0.02);
+      --tint-strong: rgba(255, 255, 255, 0.04);
       --text: #f3efe8;
       --soft: #bac3d1;
       --muted: #8d97ab;
@@ -67,6 +69,8 @@
       --panel-2: #f2e7da;
       --line: rgba(22, 30, 43, 0.08);
       --line-strong: rgba(22, 30, 43, 0.16);
+      --tint: rgba(22, 30, 43, 0.03);
+      --tint-strong: rgba(22, 30, 43, 0.06);
       --text: #171d27;
       --soft: #435066;
       --muted: #6d788c;
@@ -179,8 +183,9 @@
 
     .brand-title {
       margin: 2px 0 0;
+      font-family: "Space Grotesk", sans-serif;
       font-size: 22px;
-      font-weight: 800;
+      font-weight: 700;
     }
 
     .topbar-status {
@@ -208,8 +213,9 @@
       align-items: center;
       justify-content: center;
       border: 1px solid var(--line-strong);
+      border-radius: 999px;
       color: var(--text);
-      background: rgba(255,255,255,0.02);
+      background: var(--tint);
       transition: border-color 160ms ease, transform 160ms ease, background 160ms ease;
     }
 
@@ -219,7 +225,7 @@
     .card-link:hover {
       transform: translateY(-1px);
       border-color: rgba(216, 91, 61, 0.42);
-      background: rgba(255,255,255,0.04);
+      background: var(--tint-strong);
     }
 
     .topbar-cta,
@@ -246,9 +252,11 @@
     .hero-title {
       margin: 20px 0 22px;
       max-width: 11ch;
+      font-family: "Space Grotesk", sans-serif;
+      font-weight: 700;
       font-size: clamp(48px, 8vw, 92px);
       line-height: 0.9;
-      letter-spacing: -0.08em;
+      letter-spacing: -0.075em;
     }
 
     .hero-copy,
@@ -304,6 +312,8 @@
     .section-title,
     .cta-title {
       margin: 0 0 14px;
+      font-family: "Space Grotesk", sans-serif;
+      font-weight: 700;
       font-size: clamp(28px, 4vw, 58px);
       line-height: 0.96;
       letter-spacing: -0.07em;
@@ -370,6 +380,8 @@
     .app-title,
     .signal-title {
       margin: 0;
+      font-family: "Space Grotesk", sans-serif;
+      font-weight: 700;
       font-size: 24px;
       line-height: 1.02;
       letter-spacing: -0.05em;
@@ -428,7 +440,7 @@
       padding: 5px;
       border: 1px solid var(--line);
       border-radius: 999px;
-      background: rgba(255,255,255,0.02);
+      background: var(--tint);
     }
     .control-option {
       display: inline-flex;
