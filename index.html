@@ -547,6 +547,8 @@
             <div class="control-cluster" aria-label="Taal kiezen">
               <button class="control-option" type="button" data-locale-option="nl">NL</button>
               <button class="control-option" type="button" data-locale-option="en">EN</button>
+              <button class="control-option" type="button" data-locale-option="fr">FR</button>
+              <button class="control-option" type="button" data-locale-option="es">ES</button>
             </div>
             <a class="topbar-cta" href="mailto:inbox@pixelpiraterij.nl">Vraag toegang</a>
           </div>
@@ -685,7 +687,10 @@
     const localeButtons = Array.from(document.querySelectorAll("[data-locale-option]"));
     const themeButtons = Array.from(document.querySelectorAll("[data-theme-option]"));
     let currentCatalog = null;
-    let currentLocale = localStorage.getItem("pp-hub-locale") === "en" ? "en" : "nl";
+    const validLocales = ["nl", "en", "fr", "es"];
+    let currentLocale = validLocales.includes(localStorage.getItem("pp-hub-locale"))
+      ? localStorage.getItem("pp-hub-locale")
+      : "nl";
 
     const uiCopy = {
       nl: {
@@ -745,6 +750,64 @@
         soon: "Coming soon",
         platformLabel: "Platform: Android + Web",
         statusLabel: "Status"
+      },
+      fr: {
+        navEyebrow: "Galerie d'applis / couche suite",
+        navStatus: "Le hub n'est ni le studio ni la vitrine. C'est la couche suite où les applis, versions web et futurs téléchargements se retrouvent logiquement sous le même parapluie PixelPiraterij.",
+        heroTag: "Galerie, suite web et couche de distribution",
+        heroTitle: "Des applis qui peuvent exister seules, mais qui se lisent plus fort ensemble.",
+        heroCopy: "Ici, vous ouvrirez bientôt des applis web, des routes Android et de futurs téléchargements logiciels depuis une seule couche PixelPiraterij claire. Pas de copie de vitrine, pas de route studio, mais un hub qui porte l'usage, la distribution et la logique de suite.",
+        heroPrimaryCta: "Ouvrir la galerie d'applis",
+        heroSecondaryCta: "Aller à la vitrine",
+        manifestCap: "Cadre du hub",
+        manifestOneKicker: "Ce qui a sa place ici",
+        manifestOneTitle: "Ouvrir des applis, trouver des versions web et distribuer des logiciels plus tard.",
+        manifestOneBody: "Le hub doit être tangible et utilisable. Pas une couche d'explication de plus sur qui est PixelPiraterij, mais une étagère centrale pour ce que quelqu'un veut réellement ouvrir ou télécharger.",
+        manifestTwoKicker: "Ce qui n'a pas sa place ici",
+        manifestTwoTitle: "Ne pas reprendre le rôle de porte d'entrée commerciale ni le récit de la vitrine.",
+        manifestTwoBody: "`.nl` vend le parcours. `.online` fait vivre les capacités et les routes. Le hub se concentre sur la suite elle-même : usage, accès et distribution.",
+        appsTag: "Galerie d'applis",
+        appsTitle: "Des versions web actives qui méritent déjà leur place.",
+        appsBody: "Ces cartes ouvrent les routes individuelles. Cette couche pourra ensuite ajouter des builds Android, des logiciels Windows et une logique de compte partagée, sans que les applis perdent leur propre identité.",
+        appsMetaOne: "Plateforme : Web en ligne",
+        appsMetaTwo: "Statut : public",
+        appsMetaThree: "Prochaine phase : Android / Windows",
+        webModeLegacy: "Web legacy",
+        webModeHub: "Nouvelle route hub",
+        openWeb: "Ouvrir le web",
+        details: "Détails",
+        soon: "Bientôt",
+        platformLabel: "Plateforme : Android + Web",
+        statusLabel: "Statut"
+      },
+      es: {
+        navEyebrow: "Galería de apps / capa de suite",
+        navStatus: "El hub no es el estudio ni el showroom. Es la capa de suite donde las apps, versiones web y futuras descargas se reúnen de forma lógica bajo el mismo paraguas PixelPiraterij.",
+        heroTag: "Galería, suite web y capa de distribución",
+        heroTitle: "Apps que pueden funcionar solas, pero que se leen más fuertes juntas.",
+        heroCopy: "Aquí abrirás pronto apps web, rutas Android y futuras descargas de software desde una sola capa PixelPiraterij clara. Sin copia de showroom, sin ruta de estudio, sino un hub que sostiene el uso, la distribución y la lógica de suite.",
+        heroPrimaryCta: "Abrir la galería de apps",
+        heroSecondaryCta: "Ir al showroom",
+        manifestCap: "Marco del hub",
+        manifestOneKicker: "Lo que pertenece aquí",
+        manifestOneTitle: "Abrir apps, encontrar versiones web y distribuir software más adelante.",
+        manifestOneBody: "El hub debe sentirse tangible y utilizable. No otra capa de explicación sobre quién es PixelPiraterij, sino un estante central para lo que alguien realmente quiere abrir o descargar.",
+        manifestTwoKicker: "Lo que no pertenece aquí",
+        manifestTwoTitle: "No sustituir la puerta de ventas ni el relato del showroom.",
+        manifestTwoBody: "`.nl` vende el recorrido. `.online` da vida a las capacidades y rutas. El hub se centra en la suite en sí: uso, acceso y distribución.",
+        appsTag: "Galería de apps",
+        appsTitle: "Versiones web activas que ya merecen un lugar.",
+        appsBody: "Estas tarjetas abren las rutas individuales. Más adelante esta capa podrá añadir builds de Android, software de Windows y lógica de cuenta compartida, sin que las apps pierdan su propia identidad.",
+        appsMetaOne: "Plataforma: Web en vivo",
+        appsMetaTwo: "Estado: público",
+        appsMetaThree: "Próxima fase: Android / Windows",
+        webModeLegacy: "Web legacy",
+        webModeHub: "Nueva ruta del hub",
+        openWeb: "Abrir web",
+        details: "Detalles",
+        soon: "Próximamente",
+        platformLabel: "Plataforma: Android + Web",
+        statusLabel: "Estado"
       }
     };
 
@@ -761,7 +824,7 @@
     }
 
     function applyLocale(locale) {
-      currentLocale = locale === "en" ? "en" : "nl";
+      currentLocale = validLocales.includes(locale) ? locale : "nl";
       localStorage.setItem("pp-hub-locale", currentLocale);
       document.documentElement.lang = currentLocale;
       localeButtons.forEach((button) => {

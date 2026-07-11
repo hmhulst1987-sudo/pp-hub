@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-08T11:33:39.178Z",
+  "generatedAt": "2026-07-11T00:23:39.682Z",
   "schemaVersion": 1,
   "suite": {
     "id": "pixelpiraterij",
@@ -39,6 +39,34 @@
         "labelFree": "Free",
         "labelPro": "Pro",
         "labelComingSoon": "Coming soon",
+        "labelLegacy": "Legacy",
+        "labelAndroid": "Android",
+        "labelWeb": "Web"
+      },
+      "fr": {
+        "title": "PixelPiraterij Hub",
+        "tagline": "La suite d'utilitaires PixelPiraterij, sur Android et sur le web.",
+        "description": "Utilisez les mêmes applications PixelPiraterij via le Play Store ou directement dans la suite web sur hub.pixelpiraterij.online.",
+        "ctaOpenHub": "Ouvrir le hub",
+        "ctaOpenWebApp": "Ouvrir l'appli web",
+        "ctaOpenPlayStore": "Ouvrir sur le Play Store",
+        "labelFree": "Gratuit",
+        "labelPro": "Pro",
+        "labelComingSoon": "Bientôt",
+        "labelLegacy": "Legacy",
+        "labelAndroid": "Android",
+        "labelWeb": "Web"
+      },
+      "es": {
+        "title": "PixelPiraterij Hub",
+        "tagline": "La suite de utilidades de PixelPiraterij, en Android y en la web.",
+        "description": "Usa las mismas apps de PixelPiraterij a través de la Play Store o directamente en la suite web en hub.pixelpiraterij.online.",
+        "ctaOpenHub": "Abrir el hub",
+        "ctaOpenWebApp": "Abrir app web",
+        "ctaOpenPlayStore": "Abrir en Play Store",
+        "labelFree": "Gratis",
+        "labelPro": "Pro",
+        "labelComingSoon": "Próximamente",
         "labelLegacy": "Legacy",
         "labelAndroid": "Android",
         "labelWeb": "Web"
@@ -1724,6 +1752,1708 @@
         "labels": {
           "free": "Basic generator and limited vault",
           "pro": "Unlimited vault and advanced tools"
+        },
+        "platformSupport": {
+          "android": true,
+          "web": true,
+          "legacyStandaloneWeb": true
+        },
+        "features": {
+          "core": [
+            "password_generator",
+            "vault",
+            "security_preferences"
+          ],
+          "free": [
+            "basic_generation",
+            "limited_vault"
+          ],
+          "pro": [
+            "advanced_generator",
+            "unlimited_entries",
+            "advanced_export"
+          ]
+        }
+      }
+    ],
+    "fr": [
+      {
+        "id": "authenticator",
+        "icon": "2F",
+        "iconPath": "/assets/apps/authenticator.png",
+        "title": "Authenticator",
+        "tagline": "Une 2FA sereine, sans bruit superflu.",
+        "description": "Gérez vos codes de vérification dans une interface PixelPiraterij calme, pensée pour la rapidité et la clarté.",
+        "shortStatus": "Dernières finitions avant la sortie.",
+        "category": "security",
+        "pricing": {
+          "model": "one_time_pro_unlock_with_ads",
+          "hasAds": true,
+          "hasProUnlock": true,
+          "adsDisabledForPro": true
+        },
+        "status": {
+          "android": "in_final_polish",
+          "web": "planned_for_hub_runtime",
+          "legacyWeb": "live",
+          "releaseTrack": "pre_playstore",
+          "label": "Binnenkort"
+        },
+        "routes": {
+          "canonicalWebRoute": "/apps/authenticator",
+          "canonicalWebUrl": "https://hub.pixelpiraterij.online/apps/authenticator",
+          "legacyWebDomain": "https://auth.pixelpiraterij.online",
+          "playStoreUrl": ""
+        },
+        "labels": {
+          "free": "2FA de base en local",
+          "pro": "Sauvegarde et gestion avancées"
+        },
+        "platformSupport": {
+          "android": true,
+          "web": true,
+          "legacyStandaloneWeb": true
+        },
+        "features": {
+          "core": [
+            "code_vault",
+            "fast_lookup",
+            "manual_entry"
+          ],
+          "free": [
+            "local_codes",
+            "basic_management"
+          ],
+          "pro": [
+            "advanced_backup",
+            "extended_management"
+          ]
+        }
+      },
+      {
+        "id": "calmguard",
+        "icon": "CG",
+        "iconPath": "/assets/apps/calmguard.png",
+        "title": "CalmGuard",
+        "tagline": "Plus de calme, moins d'encombrement numérique.",
+        "description": "Un utilitaire dédié à la vie privée, aux blocages et à un usage plus serein, conçu dans la même ligne PixelPiraterij.",
+        "shortStatus": "Dernières finitions avant la sortie.",
+        "category": "privacy",
+        "pricing": {
+          "model": "one_time_pro_unlock_with_ads",
+          "hasAds": true,
+          "hasProUnlock": true,
+          "adsDisabledForPro": true
+        },
+        "status": {
+          "android": "in_final_polish",
+          "web": "planned_for_hub_runtime",
+          "legacyWeb": "live",
+          "releaseTrack": "pre_playstore",
+          "label": "Binnenkort"
+        },
+        "routes": {
+          "canonicalWebRoute": "/apps/calmguard",
+          "canonicalWebUrl": "https://hub.pixelpiraterij.online/apps/calmguard",
+          "legacyWebDomain": "https://calmguard.pixelpiraterij.online",
+          "playStoreUrl": ""
+        },
+        "labels": {
+          "free": "Contrôle de confidentialité de base",
+          "pro": "Profils et règles avancés"
+        },
+        "platformSupport": {
+          "android": true,
+          "web": true,
+          "legacyStandaloneWeb": true
+        },
+        "features": {
+          "core": [
+            "calm_mode",
+            "privacy_controls",
+            "session_guard"
+          ],
+          "free": [
+            "basic_controls",
+            "local_preferences"
+          ],
+          "pro": [
+            "advanced_profiles",
+            "extended_guard_rules"
+          ]
+        }
+      },
+      {
+        "id": "calmread",
+        "icon": "CR",
+        "iconPath": "/assets/apps/calmread.png",
+        "title": "CalmRead",
+        "tagline": "Lire avec moins de distractions.",
+        "description": "Un utilitaire de lecture qui place le calme et la concentration au cœur de votre consommation de contenu au quotidien.",
+        "shortStatus": "Dernières finitions avant la sortie.",
+        "category": "focus",
+        "pricing": {
+          "model": "one_time_pro_unlock_with_ads",
+          "hasAds": true,
+          "hasProUnlock": true,
+          "adsDisabledForPro": true
+        },
+        "status": {
+          "android": "in_final_polish",
+          "web": "planned_for_hub_runtime",
+          "legacyWeb": "live",
+          "releaseTrack": "pre_playstore",
+          "label": "Binnenkort"
+        },
+        "routes": {
+          "canonicalWebRoute": "/apps/calmread",
+          "canonicalWebUrl": "https://hub.pixelpiraterij.online/apps/calmread",
+          "legacyWebDomain": "https://calmread.pixelpiraterij.online",
+          "playStoreUrl": ""
+        },
+        "labels": {
+          "free": "Expérience de lecture de base",
+          "pro": "Thèmes étendus et outils de bibliothèque"
+        },
+        "platformSupport": {
+          "android": true,
+          "web": true,
+          "legacyStandaloneWeb": true
+        },
+        "features": {
+          "core": [
+            "reader_mode",
+            "calm_theme",
+            "session_tracking"
+          ],
+          "free": [
+            "basic_reading",
+            "saved_preferences"
+          ],
+          "pro": [
+            "advanced_themes",
+            "extended_library_tools"
+          ]
+        }
+      },
+      {
+        "id": "focusvaart",
+        "icon": "FV",
+        "iconPath": "/assets/apps/focusvaart.png",
+        "title": "FocusVaart",
+        "tagline": "Des sessions de travail avec cap et rythme.",
+        "description": "Pour des sessions de concentration, du rythme et un travail orienté objectifs, dans le style PixelPiraterij.",
+        "shortStatus": "Dernières finitions avant la sortie.",
+        "category": "focus",
+        "pricing": {
+          "model": "one_time_pro_unlock_with_ads",
+          "hasAds": true,
+          "hasProUnlock": true,
+          "adsDisabledForPro": true
+        },
+        "status": {
+          "android": "in_final_polish",
+          "web": "planned_for_hub_runtime",
+          "legacyWeb": "live",
+          "releaseTrack": "pre_playstore",
+          "label": "Binnenkort"
+        },
+        "routes": {
+          "canonicalWebRoute": "/apps/focusvaart",
+          "canonicalWebUrl": "https://hub.pixelpiraterij.online/apps/focusvaart",
+          "legacyWebDomain": "https://focus.pixelpiraterij.online",
+          "playStoreUrl": ""
+        },
+        "labels": {
+          "free": "Sessions de concentration de base",
+          "pro": "Préréglages et analyses avancés"
+        },
+        "platformSupport": {
+          "android": true,
+          "web": true,
+          "legacyStandaloneWeb": true
+        },
+        "features": {
+          "core": [
+            "focus_timer",
+            "session_blocks",
+            "progress_feedback"
+          ],
+          "free": [
+            "basic_sessions",
+            "default_presets"
+          ],
+          "pro": [
+            "advanced_presets",
+            "detailed_stats"
+          ]
+        }
+      },
+      {
+        "id": "gewoontes",
+        "icon": "GW",
+        "iconPath": "/assets/apps/gewoontes.png",
+        "title": "Gewoontes",
+        "tagline": "Vos habitudes quotidiennes, clairement visibles.",
+        "description": "Une application pour suivre simplement et visuellement vos routines et comportements récurrents.",
+        "shortStatus": "Prévu pour le nouveau runtime du hub.",
+        "category": "productivity",
+        "pricing": {
+          "model": "one_time_pro_unlock_with_ads",
+          "hasAds": true,
+          "hasProUnlock": true,
+          "adsDisabledForPro": true
+        },
+        "status": {
+          "android": "in_final_polish",
+          "web": "planned_for_hub_runtime",
+          "legacyWeb": "absent",
+          "releaseTrack": "pre_playstore",
+          "label": "Binnenkort"
+        },
+        "routes": {
+          "canonicalWebRoute": "/apps/gewoontes",
+          "canonicalWebUrl": "https://hub.pixelpiraterij.online/apps/gewoontes",
+          "legacyWebDomain": "",
+          "playStoreUrl": ""
+        },
+        "labels": {
+          "free": "Suivi d'habitudes de base",
+          "pro": "Analyses et historique étendu"
+        },
+        "platformSupport": {
+          "android": true,
+          "web": true,
+          "legacyStandaloneWeb": false
+        },
+        "features": {
+          "core": [
+            "habit_tracking",
+            "daily_checkins",
+            "streaks"
+          ],
+          "free": [
+            "basic_tracking",
+            "limited_history"
+          ],
+          "pro": [
+            "advanced_insights",
+            "extended_history"
+          ]
+        }
+      },
+      {
+        "id": "horizon",
+        "icon": "HZ",
+        "iconPath": "/assets/apps/horizon.png",
+        "title": "Horizon",
+        "tagline": "De l'espace pour anticiper.",
+        "description": "Un utilitaire dédié à la planification, à la direction et à la clarté de la prochaine étape.",
+        "shortStatus": "Prévu pour le nouveau runtime du hub.",
+        "category": "lifestyle",
+        "pricing": {
+          "model": "one_time_pro_unlock_with_ads",
+          "hasAds": true,
+          "hasProUnlock": true,
+          "adsDisabledForPro": true
+        },
+        "status": {
+          "android": "in_final_polish",
+          "web": "planned_for_hub_runtime",
+          "legacyWeb": "absent",
+          "releaseTrack": "pre_playstore",
+          "label": "Binnenkort"
+        },
+        "routes": {
+          "canonicalWebRoute": "/apps/horizon",
+          "canonicalWebUrl": "https://hub.pixelpiraterij.online/apps/horizon",
+          "legacyWebDomain": "",
+          "playStoreUrl": ""
+        },
+        "labels": {
+          "free": "Planification de base",
+          "pro": "Feuilles de route et vues avancées"
+        },
+        "platformSupport": {
+          "android": true,
+          "web": true,
+          "legacyStandaloneWeb": false
+        },
+        "features": {
+          "core": [
+            "goal_view",
+            "timeline",
+            "next_step_focus"
+          ],
+          "free": [
+            "basic_planning",
+            "simple_tracking"
+          ],
+          "pro": [
+            "advanced_roadmaps",
+            "extended_views"
+          ]
+        }
+      },
+      {
+        "id": "klankvaart",
+        "icon": "KV",
+        "iconPath": "/assets/apps/klankvaart.png",
+        "title": "KlankVaart",
+        "tagline": "Du son avec direction et ambiance.",
+        "description": "Un utilitaire orienté audio au sein de la même suite et identité PixelPiraterij.",
+        "shortStatus": "Prévu pour le nouveau runtime du hub.",
+        "category": "audio",
+        "pricing": {
+          "model": "one_time_pro_unlock_with_ads",
+          "hasAds": true,
+          "hasProUnlock": true,
+          "adsDisabledForPro": true
+        },
+        "status": {
+          "android": "in_final_polish",
+          "web": "planned_for_hub_runtime",
+          "legacyWeb": "absent",
+          "releaseTrack": "pre_playstore",
+          "label": "Binnenkort"
+        },
+        "routes": {
+          "canonicalWebRoute": "/apps/klankvaart",
+          "canonicalWebUrl": "https://hub.pixelpiraterij.online/apps/klankvaart",
+          "legacyWebDomain": "",
+          "playStoreUrl": ""
+        },
+        "labels": {
+          "free": "Sessions audio de base",
+          "pro": "Outils de paysage sonore avancés"
+        },
+        "platformSupport": {
+          "android": true,
+          "web": true,
+          "legacyStandaloneWeb": false
+        },
+        "features": {
+          "core": [
+            "audio_sessions",
+            "mood_presets",
+            "playback_flow"
+          ],
+          "free": [
+            "basic_sessions",
+            "default_presets"
+          ],
+          "pro": [
+            "extended_soundscape_tools",
+            "advanced_presets"
+          ]
+        }
+      },
+      {
+        "id": "kompas",
+        "icon": "KP",
+        "iconPath": "/assets/apps/kompas.png",
+        "title": "Kompas",
+        "tagline": "Une orientation pour le quotidien.",
+        "description": "Un utilitaire compact pour simplifier la direction, la concentration et la navigation.",
+        "shortStatus": "Prévu pour le nouveau runtime du hub.",
+        "category": "orientation",
+        "pricing": {
+          "model": "one_time_pro_unlock_with_ads",
+          "hasAds": true,
+          "hasProUnlock": true,
+          "adsDisabledForPro": true
+        },
+        "status": {
+          "android": "in_final_polish",
+          "web": "planned_for_hub_runtime",
+          "legacyWeb": "absent",
+          "releaseTrack": "pre_playstore",
+          "label": "Binnenkort"
+        },
+        "routes": {
+          "canonicalWebRoute": "/apps/kompas",
+          "canonicalWebUrl": "https://hub.pixelpiraterij.online/apps/kompas",
+          "legacyWebDomain": "",
+          "playStoreUrl": ""
+        },
+        "labels": {
+          "free": "Orientation de base",
+          "pro": "Outils et vues étendus"
+        },
+        "platformSupport": {
+          "android": true,
+          "web": true,
+          "legacyStandaloneWeb": false
+        },
+        "features": {
+          "core": [
+            "direction_view",
+            "orientation_tools",
+            "focus_navigation"
+          ],
+          "free": [
+            "basic_direction",
+            "simple_guidance"
+          ],
+          "pro": [
+            "advanced_views",
+            "extended_tools"
+          ]
+        }
+      },
+      {
+        "id": "kustwacht",
+        "icon": "KW",
+        "iconPath": "/assets/apps/kustwacht.png",
+        "title": "Kustwacht",
+        "tagline": "Météo, rythme et suivi quotidien.",
+        "description": "Un utilitaire avec informations météo, rythme et une couche d'usage quotidien apaisée.",
+        "shortStatus": "La version web legacy est encore en ligne.",
+        "category": "weather",
+        "pricing": {
+          "model": "one_time_pro_unlock_with_ads",
+          "hasAds": true,
+          "hasProUnlock": true,
+          "adsDisabledForPro": true
+        },
+        "status": {
+          "android": "in_final_polish",
+          "web": "planned_for_hub_runtime",
+          "legacyWeb": "live",
+          "releaseTrack": "pre_playstore",
+          "label": "Binnenkort"
+        },
+        "routes": {
+          "canonicalWebRoute": "/apps/kustwacht",
+          "canonicalWebUrl": "https://hub.pixelpiraterij.online/apps/kustwacht",
+          "legacyWebDomain": "https://kustwacht.pixelpiraterij.online",
+          "playStoreUrl": ""
+        },
+        "labels": {
+          "free": "Aperçu météo de base",
+          "pro": "Contexte et panneaux étendus"
+        },
+        "platformSupport": {
+          "android": true,
+          "web": true,
+          "legacyStandaloneWeb": true
+        },
+        "features": {
+          "core": [
+            "weather_check",
+            "daily_rhythm",
+            "coastal_briefing"
+          ],
+          "free": [
+            "basic_forecast",
+            "simple_view"
+          ],
+          "pro": [
+            "extended_context",
+            "advanced_panels"
+          ]
+        }
+      },
+      {
+        "id": "muziekspeler",
+        "icon": "MP",
+        "iconPath": "/assets/apps/muziekspeler.png",
+        "title": "Muziekspeler",
+        "tagline": "Un lecteur simple, sans superflu.",
+        "description": "Un utilitaire audio PixelPiraterij avec des commandes légères et une interface apaisée.",
+        "shortStatus": "La version web legacy est encore en ligne.",
+        "category": "media",
+        "pricing": {
+          "model": "one_time_pro_unlock_with_ads",
+          "hasAds": true,
+          "hasProUnlock": true,
+          "adsDisabledForPro": true
+        },
+        "status": {
+          "android": "in_final_polish",
+          "web": "planned_for_hub_runtime",
+          "legacyWeb": "live",
+          "releaseTrack": "pre_playstore",
+          "label": "Binnenkort"
+        },
+        "routes": {
+          "canonicalWebRoute": "/apps/muziekspeler",
+          "canonicalWebUrl": "https://hub.pixelpiraterij.online/apps/muziekspeler",
+          "legacyWebDomain": "https://muziek.pixelpiraterij.online",
+          "playStoreUrl": ""
+        },
+        "labels": {
+          "free": "Lecture de base",
+          "pro": "Bibliothèque et commandes étendues"
+        },
+        "platformSupport": {
+          "android": true,
+          "web": true,
+          "legacyStandaloneWeb": true
+        },
+        "features": {
+          "core": [
+            "audio_playback",
+            "playlist_flow",
+            "calm_controls"
+          ],
+          "free": [
+            "basic_player",
+            "simple_playlist"
+          ],
+          "pro": [
+            "extended_library_tools",
+            "advanced_audio_controls"
+          ]
+        }
+      },
+      {
+        "id": "nautilus",
+        "icon": "NA",
+        "iconPath": "/assets/apps/nautilus.png",
+        "title": "Nautilus",
+        "tagline": "Un utilitaire avec profondeur et contrôle.",
+        "description": "Une route utilitaire plus large au sein de la suite, pensée pour plus de contrôle et de structure.",
+        "shortStatus": "Prévu pour le nouveau runtime du hub.",
+        "category": "utility",
+        "pricing": {
+          "model": "one_time_pro_unlock_with_ads",
+          "hasAds": true,
+          "hasProUnlock": true,
+          "adsDisabledForPro": true
+        },
+        "status": {
+          "android": "in_final_polish",
+          "web": "planned_for_hub_runtime",
+          "legacyWeb": "absent",
+          "releaseTrack": "pre_playstore",
+          "label": "Binnenkort"
+        },
+        "routes": {
+          "canonicalWebRoute": "/apps/nautilus",
+          "canonicalWebUrl": "https://hub.pixelpiraterij.online/apps/nautilus",
+          "legacyWebDomain": "",
+          "playStoreUrl": ""
+        },
+        "labels": {
+          "free": "Panneaux de base",
+          "pro": "Système de panneaux avancé"
+        },
+        "platformSupport": {
+          "android": true,
+          "web": true,
+          "legacyStandaloneWeb": false
+        },
+        "features": {
+          "core": [
+            "control_center",
+            "privacy_options",
+            "tool_panels"
+          ],
+          "free": [
+            "basic_panels",
+            "simple_control"
+          ],
+          "pro": [
+            "advanced_panels",
+            "extended_controls"
+          ]
+        }
+      },
+      {
+        "id": "notities",
+        "icon": "NT",
+        "iconPath": "/assets/apps/notities.png",
+        "title": "Notities",
+        "tagline": "Écrire sans distraction.",
+        "description": "Pour des notes rapides, claires, dans un environnement de travail apaisé.",
+        "shortStatus": "Prévu pour le nouveau runtime du hub.",
+        "category": "productivity",
+        "pricing": {
+          "model": "one_time_pro_unlock_with_ads",
+          "hasAds": true,
+          "hasProUnlock": true,
+          "adsDisabledForPro": true
+        },
+        "status": {
+          "android": "in_final_polish",
+          "web": "planned_for_hub_runtime",
+          "legacyWeb": "absent",
+          "releaseTrack": "pre_playstore",
+          "label": "Binnenkort"
+        },
+        "routes": {
+          "canonicalWebRoute": "/apps/notities",
+          "canonicalWebUrl": "https://hub.pixelpiraterij.online/apps/notities",
+          "legacyWebDomain": "",
+          "playStoreUrl": ""
+        },
+        "labels": {
+          "free": "Notes de base",
+          "pro": "Export et organisation avancés"
+        },
+        "platformSupport": {
+          "android": true,
+          "web": true,
+          "legacyStandaloneWeb": false
+        },
+        "features": {
+          "core": [
+            "note_editor",
+            "note_list",
+            "simple_organization"
+          ],
+          "free": [
+            "basic_notes",
+            "local_storage"
+          ],
+          "pro": [
+            "advanced_export",
+            "extended_organization"
+          ]
+        }
+      },
+      {
+        "id": "qrmaster",
+        "icon": "QR",
+        "iconPath": "/assets/apps/qrmaster.png",
+        "title": "QR Master",
+        "tagline": "Scanner, créer et partager.",
+        "description": "Un utilitaire pour générer, lire et gérer des codes QR au sein de la même expérience PixelPiraterij.",
+        "shortStatus": "La version web legacy est encore en ligne.",
+        "category": "utility",
+        "pricing": {
+          "model": "one_time_pro_unlock_with_ads",
+          "hasAds": true,
+          "hasProUnlock": true,
+          "adsDisabledForPro": true
+        },
+        "status": {
+          "android": "in_final_polish",
+          "web": "planned_for_hub_runtime",
+          "legacyWeb": "live",
+          "releaseTrack": "pre_playstore",
+          "label": "Binnenkort"
+        },
+        "routes": {
+          "canonicalWebRoute": "/apps/qrmaster",
+          "canonicalWebUrl": "https://hub.pixelpiraterij.online/apps/qrmaster",
+          "legacyWebDomain": "https://qr.pixelpiraterij.online",
+          "playStoreUrl": ""
+        },
+        "labels": {
+          "free": "Scan et génération de base",
+          "pro": "Historique et outils d'export"
+        },
+        "platformSupport": {
+          "android": true,
+          "web": true,
+          "legacyStandaloneWeb": true
+        },
+        "features": {
+          "core": [
+            "scan_qr",
+            "generate_qr",
+            "share_results"
+          ],
+          "free": [
+            "basic_scan",
+            "basic_generate"
+          ],
+          "pro": [
+            "history_tools",
+            "advanced_export"
+          ]
+        }
+      },
+      {
+        "id": "schatkist",
+        "icon": "€",
+        "iconPath": "/assets/apps/schatkist.png",
+        "title": "Schatkist",
+        "tagline": "La maîtrise de vos finances.",
+        "description": "Pour le budget, la vue d'ensemble et la discipline autour des dépenses quotidiennes et de l'épargne.",
+        "shortStatus": "La version web legacy est encore en ligne.",
+        "category": "finance",
+        "pricing": {
+          "model": "one_time_pro_unlock_with_ads",
+          "hasAds": true,
+          "hasProUnlock": true,
+          "adsDisabledForPro": true
+        },
+        "status": {
+          "android": "in_final_polish",
+          "web": "planned_for_hub_runtime",
+          "legacyWeb": "live",
+          "releaseTrack": "pre_playstore",
+          "label": "Binnenkort"
+        },
+        "routes": {
+          "canonicalWebRoute": "/apps/schatkist",
+          "canonicalWebUrl": "https://hub.pixelpiraterij.online/apps/schatkist",
+          "legacyWebDomain": "https://schatkist.pixelpiraterij.online",
+          "playStoreUrl": ""
+        },
+        "labels": {
+          "free": "Budget de base",
+          "pro": "Statistiques et export avancés"
+        },
+        "platformSupport": {
+          "android": true,
+          "web": true,
+          "legacyStandaloneWeb": true
+        },
+        "features": {
+          "core": [
+            "budget_tracking",
+            "transactions",
+            "financial_overview"
+          ],
+          "free": [
+            "basic_entries",
+            "simple_totals"
+          ],
+          "pro": [
+            "advanced_stats",
+            "extended_exports"
+          ]
+        }
+      },
+      {
+        "id": "scheepslog",
+        "icon": "SL",
+        "iconPath": "/assets/apps/scheepslog.png",
+        "title": "Scheepslog",
+        "tagline": "Votre journée, votre rythme, votre journal de bord.",
+        "description": "Un utilitaire de journaling PixelPiraterij pour capturer schémas, humeur et progression.",
+        "shortStatus": "Prévu pour le nouveau runtime du hub.",
+        "category": "journal",
+        "pricing": {
+          "model": "one_time_pro_unlock_with_ads",
+          "hasAds": true,
+          "hasProUnlock": true,
+          "adsDisabledForPro": true
+        },
+        "status": {
+          "android": "in_final_polish",
+          "web": "planned_for_hub_runtime",
+          "legacyWeb": "absent",
+          "releaseTrack": "pre_playstore",
+          "label": "Binnenkort"
+        },
+        "routes": {
+          "canonicalWebRoute": "/apps/scheepslog",
+          "canonicalWebUrl": "https://hub.pixelpiraterij.online/apps/scheepslog",
+          "legacyWebDomain": "",
+          "playStoreUrl": ""
+        },
+        "labels": {
+          "free": "Journaling de base",
+          "pro": "Analyses et export étendu"
+        },
+        "platformSupport": {
+          "android": true,
+          "web": true,
+          "legacyStandaloneWeb": false
+        },
+        "features": {
+          "core": [
+            "journal_entries",
+            "mood_tracking",
+            "timeline_view"
+          ],
+          "free": [
+            "basic_logging",
+            "local_history"
+          ],
+          "pro": [
+            "advanced_insights",
+            "extended_export"
+          ]
+        }
+      },
+      {
+        "id": "wachtwoord",
+        "icon": "PW",
+        "iconPath": "/assets/apps/wachtwoord.png",
+        "title": "Wachtwoord",
+        "tagline": "Des mots de passe solides, sans bruit.",
+        "description": "Générez et gérez vos mots de passe dans un flux utilitaire serein, avec une structure gratuite et pro.",
+        "shortStatus": "La version web legacy est encore en ligne.",
+        "category": "security",
+        "pricing": {
+          "model": "one_time_pro_unlock_with_ads",
+          "hasAds": true,
+          "hasProUnlock": true,
+          "adsDisabledForPro": true
+        },
+        "status": {
+          "android": "in_final_polish",
+          "web": "planned_for_hub_runtime",
+          "legacyWeb": "live",
+          "releaseTrack": "pre_playstore",
+          "label": "Binnenkort"
+        },
+        "routes": {
+          "canonicalWebRoute": "/apps/wachtwoord",
+          "canonicalWebUrl": "https://hub.pixelpiraterij.online/apps/wachtwoord",
+          "legacyWebDomain": "https://wachtwoord.pixelpiraterij.online",
+          "playStoreUrl": ""
+        },
+        "labels": {
+          "free": "Générateur de base et coffre limité",
+          "pro": "Coffre illimité et outils avancés"
+        },
+        "platformSupport": {
+          "android": true,
+          "web": true,
+          "legacyStandaloneWeb": true
+        },
+        "features": {
+          "core": [
+            "password_generator",
+            "vault",
+            "security_preferences"
+          ],
+          "free": [
+            "basic_generation",
+            "limited_vault"
+          ],
+          "pro": [
+            "advanced_generator",
+            "unlimited_entries",
+            "advanced_export"
+          ]
+        }
+      }
+    ],
+    "es": [
+      {
+        "id": "authenticator",
+        "icon": "2F",
+        "iconPath": "/assets/apps/authenticator.png",
+        "title": "Authenticator",
+        "tagline": "2FA tranquila, sin ruido innecesario.",
+        "description": "Gestiona tus códigos de verificación en una interfaz PixelPiraterij calmada, centrada en la rapidez y la claridad.",
+        "shortStatus": "Últimos retoques antes del lanzamiento.",
+        "category": "security",
+        "pricing": {
+          "model": "one_time_pro_unlock_with_ads",
+          "hasAds": true,
+          "hasProUnlock": true,
+          "adsDisabledForPro": true
+        },
+        "status": {
+          "android": "in_final_polish",
+          "web": "planned_for_hub_runtime",
+          "legacyWeb": "live",
+          "releaseTrack": "pre_playstore",
+          "label": "Binnenkort"
+        },
+        "routes": {
+          "canonicalWebRoute": "/apps/authenticator",
+          "canonicalWebUrl": "https://hub.pixelpiraterij.online/apps/authenticator",
+          "legacyWebDomain": "https://auth.pixelpiraterij.online",
+          "playStoreUrl": ""
+        },
+        "labels": {
+          "free": "2FA básica local",
+          "pro": "Copia de seguridad y gestión avanzadas"
+        },
+        "platformSupport": {
+          "android": true,
+          "web": true,
+          "legacyStandaloneWeb": true
+        },
+        "features": {
+          "core": [
+            "code_vault",
+            "fast_lookup",
+            "manual_entry"
+          ],
+          "free": [
+            "local_codes",
+            "basic_management"
+          ],
+          "pro": [
+            "advanced_backup",
+            "extended_management"
+          ]
+        }
+      },
+      {
+        "id": "calmguard",
+        "icon": "CG",
+        "iconPath": "/assets/apps/calmguard.png",
+        "title": "CalmGuard",
+        "tagline": "Más calma, menos desorden digital.",
+        "description": "Una utilidad centrada en la privacidad, los bloqueos y un uso más tranquilo, construida dentro de la misma línea PixelPiraterij.",
+        "shortStatus": "Últimos retoques antes del lanzamiento.",
+        "category": "privacy",
+        "pricing": {
+          "model": "one_time_pro_unlock_with_ads",
+          "hasAds": true,
+          "hasProUnlock": true,
+          "adsDisabledForPro": true
+        },
+        "status": {
+          "android": "in_final_polish",
+          "web": "planned_for_hub_runtime",
+          "legacyWeb": "live",
+          "releaseTrack": "pre_playstore",
+          "label": "Binnenkort"
+        },
+        "routes": {
+          "canonicalWebRoute": "/apps/calmguard",
+          "canonicalWebUrl": "https://hub.pixelpiraterij.online/apps/calmguard",
+          "legacyWebDomain": "https://calmguard.pixelpiraterij.online",
+          "playStoreUrl": ""
+        },
+        "labels": {
+          "free": "Control de privacidad básico",
+          "pro": "Perfiles y reglas avanzadas"
+        },
+        "platformSupport": {
+          "android": true,
+          "web": true,
+          "legacyStandaloneWeb": true
+        },
+        "features": {
+          "core": [
+            "calm_mode",
+            "privacy_controls",
+            "session_guard"
+          ],
+          "free": [
+            "basic_controls",
+            "local_preferences"
+          ],
+          "pro": [
+            "advanced_profiles",
+            "extended_guard_rules"
+          ]
+        }
+      },
+      {
+        "id": "calmread",
+        "icon": "CR",
+        "iconPath": "/assets/apps/calmread.png",
+        "title": "CalmRead",
+        "tagline": "Leer con menos distracciones.",
+        "description": "Una utilidad de lectura que pone el enfoque y la calma en el centro del consumo diario de contenido.",
+        "shortStatus": "Últimos retoques antes del lanzamiento.",
+        "category": "focus",
+        "pricing": {
+          "model": "one_time_pro_unlock_with_ads",
+          "hasAds": true,
+          "hasProUnlock": true,
+          "adsDisabledForPro": true
+        },
+        "status": {
+          "android": "in_final_polish",
+          "web": "planned_for_hub_runtime",
+          "legacyWeb": "live",
+          "releaseTrack": "pre_playstore",
+          "label": "Binnenkort"
+        },
+        "routes": {
+          "canonicalWebRoute": "/apps/calmread",
+          "canonicalWebUrl": "https://hub.pixelpiraterij.online/apps/calmread",
+          "legacyWebDomain": "https://calmread.pixelpiraterij.online",
+          "playStoreUrl": ""
+        },
+        "labels": {
+          "free": "Experiencia de lectura básica",
+          "pro": "Temas ampliados y herramientas de biblioteca"
+        },
+        "platformSupport": {
+          "android": true,
+          "web": true,
+          "legacyStandaloneWeb": true
+        },
+        "features": {
+          "core": [
+            "reader_mode",
+            "calm_theme",
+            "session_tracking"
+          ],
+          "free": [
+            "basic_reading",
+            "saved_preferences"
+          ],
+          "pro": [
+            "advanced_themes",
+            "extended_library_tools"
+          ]
+        }
+      },
+      {
+        "id": "focusvaart",
+        "icon": "FV",
+        "iconPath": "/assets/apps/focusvaart.png",
+        "title": "FocusVaart",
+        "tagline": "Bloques de trabajo con rumbo y ritmo.",
+        "description": "Para sesiones de concentración, ritmo y trabajo orientado a objetivos, al estilo PixelPiraterij.",
+        "shortStatus": "Últimos retoques antes del lanzamiento.",
+        "category": "focus",
+        "pricing": {
+          "model": "one_time_pro_unlock_with_ads",
+          "hasAds": true,
+          "hasProUnlock": true,
+          "adsDisabledForPro": true
+        },
+        "status": {
+          "android": "in_final_polish",
+          "web": "planned_for_hub_runtime",
+          "legacyWeb": "live",
+          "releaseTrack": "pre_playstore",
+          "label": "Binnenkort"
+        },
+        "routes": {
+          "canonicalWebRoute": "/apps/focusvaart",
+          "canonicalWebUrl": "https://hub.pixelpiraterij.online/apps/focusvaart",
+          "legacyWebDomain": "https://focus.pixelpiraterij.online",
+          "playStoreUrl": ""
+        },
+        "labels": {
+          "free": "Sesiones de concentración básicas",
+          "pro": "Preajustes y estadísticas avanzadas"
+        },
+        "platformSupport": {
+          "android": true,
+          "web": true,
+          "legacyStandaloneWeb": true
+        },
+        "features": {
+          "core": [
+            "focus_timer",
+            "session_blocks",
+            "progress_feedback"
+          ],
+          "free": [
+            "basic_sessions",
+            "default_presets"
+          ],
+          "pro": [
+            "advanced_presets",
+            "detailed_stats"
+          ]
+        }
+      },
+      {
+        "id": "gewoontes",
+        "icon": "GW",
+        "iconPath": "/assets/apps/gewoontes.png",
+        "title": "Gewoontes",
+        "tagline": "Tus patrones diarios, bien a la vista.",
+        "description": "Una app para seguir de forma simple y visual tus rutinas y patrones de comportamiento recurrentes.",
+        "shortStatus": "Planeado para el nuevo runtime del hub.",
+        "category": "productivity",
+        "pricing": {
+          "model": "one_time_pro_unlock_with_ads",
+          "hasAds": true,
+          "hasProUnlock": true,
+          "adsDisabledForPro": true
+        },
+        "status": {
+          "android": "in_final_polish",
+          "web": "planned_for_hub_runtime",
+          "legacyWeb": "absent",
+          "releaseTrack": "pre_playstore",
+          "label": "Binnenkort"
+        },
+        "routes": {
+          "canonicalWebRoute": "/apps/gewoontes",
+          "canonicalWebUrl": "https://hub.pixelpiraterij.online/apps/gewoontes",
+          "legacyWebDomain": "",
+          "playStoreUrl": ""
+        },
+        "labels": {
+          "free": "Seguimiento de hábitos básico",
+          "pro": "Estadísticas e historial ampliado"
+        },
+        "platformSupport": {
+          "android": true,
+          "web": true,
+          "legacyStandaloneWeb": false
+        },
+        "features": {
+          "core": [
+            "habit_tracking",
+            "daily_checkins",
+            "streaks"
+          ],
+          "free": [
+            "basic_tracking",
+            "limited_history"
+          ],
+          "pro": [
+            "advanced_insights",
+            "extended_history"
+          ]
+        }
+      },
+      {
+        "id": "horizon",
+        "icon": "HZ",
+        "iconPath": "/assets/apps/horizon.png",
+        "title": "Horizon",
+        "tagline": "Espacio para mirar hacia adelante.",
+        "description": "Una utilidad centrada en la planificación, la dirección y mantener nítido el siguiente paso.",
+        "shortStatus": "Planeado para el nuevo runtime del hub.",
+        "category": "lifestyle",
+        "pricing": {
+          "model": "one_time_pro_unlock_with_ads",
+          "hasAds": true,
+          "hasProUnlock": true,
+          "adsDisabledForPro": true
+        },
+        "status": {
+          "android": "in_final_polish",
+          "web": "planned_for_hub_runtime",
+          "legacyWeb": "absent",
+          "releaseTrack": "pre_playstore",
+          "label": "Binnenkort"
+        },
+        "routes": {
+          "canonicalWebRoute": "/apps/horizon",
+          "canonicalWebUrl": "https://hub.pixelpiraterij.online/apps/horizon",
+          "legacyWebDomain": "",
+          "playStoreUrl": ""
+        },
+        "labels": {
+          "free": "Planificación básica",
+          "pro": "Hojas de ruta y vistas avanzadas"
+        },
+        "platformSupport": {
+          "android": true,
+          "web": true,
+          "legacyStandaloneWeb": false
+        },
+        "features": {
+          "core": [
+            "goal_view",
+            "timeline",
+            "next_step_focus"
+          ],
+          "free": [
+            "basic_planning",
+            "simple_tracking"
+          ],
+          "pro": [
+            "advanced_roadmaps",
+            "extended_views"
+          ]
+        }
+      },
+      {
+        "id": "klankvaart",
+        "icon": "KV",
+        "iconPath": "/assets/apps/klankvaart.png",
+        "title": "KlankVaart",
+        "tagline": "Sonido con dirección y ambiente.",
+        "description": "Una utilidad orientada al audio dentro de la misma suite e identidad PixelPiraterij.",
+        "shortStatus": "Planeado para el nuevo runtime del hub.",
+        "category": "audio",
+        "pricing": {
+          "model": "one_time_pro_unlock_with_ads",
+          "hasAds": true,
+          "hasProUnlock": true,
+          "adsDisabledForPro": true
+        },
+        "status": {
+          "android": "in_final_polish",
+          "web": "planned_for_hub_runtime",
+          "legacyWeb": "absent",
+          "releaseTrack": "pre_playstore",
+          "label": "Binnenkort"
+        },
+        "routes": {
+          "canonicalWebRoute": "/apps/klankvaart",
+          "canonicalWebUrl": "https://hub.pixelpiraterij.online/apps/klankvaart",
+          "legacyWebDomain": "",
+          "playStoreUrl": ""
+        },
+        "labels": {
+          "free": "Sesiones de audio básicas",
+          "pro": "Herramientas de paisaje sonoro avanzadas"
+        },
+        "platformSupport": {
+          "android": true,
+          "web": true,
+          "legacyStandaloneWeb": false
+        },
+        "features": {
+          "core": [
+            "audio_sessions",
+            "mood_presets",
+            "playback_flow"
+          ],
+          "free": [
+            "basic_sessions",
+            "default_presets"
+          ],
+          "pro": [
+            "extended_soundscape_tools",
+            "advanced_presets"
+          ]
+        }
+      },
+      {
+        "id": "kompas",
+        "icon": "KP",
+        "iconPath": "/assets/apps/kompas.png",
+        "title": "Kompas",
+        "tagline": "Orientación para el día a día.",
+        "description": "Una utilidad compacta para simplificar la dirección, el enfoque y la navegación.",
+        "shortStatus": "Planeado para el nuevo runtime del hub.",
+        "category": "orientation",
+        "pricing": {
+          "model": "one_time_pro_unlock_with_ads",
+          "hasAds": true,
+          "hasProUnlock": true,
+          "adsDisabledForPro": true
+        },
+        "status": {
+          "android": "in_final_polish",
+          "web": "planned_for_hub_runtime",
+          "legacyWeb": "absent",
+          "releaseTrack": "pre_playstore",
+          "label": "Binnenkort"
+        },
+        "routes": {
+          "canonicalWebRoute": "/apps/kompas",
+          "canonicalWebUrl": "https://hub.pixelpiraterij.online/apps/kompas",
+          "legacyWebDomain": "",
+          "playStoreUrl": ""
+        },
+        "labels": {
+          "free": "Orientación básica",
+          "pro": "Herramientas y vistas ampliadas"
+        },
+        "platformSupport": {
+          "android": true,
+          "web": true,
+          "legacyStandaloneWeb": false
+        },
+        "features": {
+          "core": [
+            "direction_view",
+            "orientation_tools",
+            "focus_navigation"
+          ],
+          "free": [
+            "basic_direction",
+            "simple_guidance"
+          ],
+          "pro": [
+            "advanced_views",
+            "extended_tools"
+          ]
+        }
+      },
+      {
+        "id": "kustwacht",
+        "icon": "KW",
+        "iconPath": "/assets/apps/kustwacht.png",
+        "title": "Kustwacht",
+        "tagline": "Clima, ritmo y control diario.",
+        "description": "Una utilidad con información meteorológica, ritmo y una capa de uso diario tranquila.",
+        "shortStatus": "La versión web legacy sigue activa.",
+        "category": "weather",
+        "pricing": {
+          "model": "one_time_pro_unlock_with_ads",
+          "hasAds": true,
+          "hasProUnlock": true,
+          "adsDisabledForPro": true
+        },
+        "status": {
+          "android": "in_final_polish",
+          "web": "planned_for_hub_runtime",
+          "legacyWeb": "live",
+          "releaseTrack": "pre_playstore",
+          "label": "Binnenkort"
+        },
+        "routes": {
+          "canonicalWebRoute": "/apps/kustwacht",
+          "canonicalWebUrl": "https://hub.pixelpiraterij.online/apps/kustwacht",
+          "legacyWebDomain": "https://kustwacht.pixelpiraterij.online",
+          "playStoreUrl": ""
+        },
+        "labels": {
+          "free": "Resumen meteorológico básico",
+          "pro": "Contexto y paneles ampliados"
+        },
+        "platformSupport": {
+          "android": true,
+          "web": true,
+          "legacyStandaloneWeb": true
+        },
+        "features": {
+          "core": [
+            "weather_check",
+            "daily_rhythm",
+            "coastal_briefing"
+          ],
+          "free": [
+            "basic_forecast",
+            "simple_view"
+          ],
+          "pro": [
+            "extended_context",
+            "advanced_panels"
+          ]
+        }
+      },
+      {
+        "id": "muziekspeler",
+        "icon": "MP",
+        "iconPath": "/assets/apps/muziekspeler.png",
+        "title": "Muziekspeler",
+        "tagline": "Un reproductor simple, sin adornos.",
+        "description": "Una utilidad de audio PixelPiraterij con controles ligeros y una interfaz tranquila.",
+        "shortStatus": "La versión web legacy sigue activa.",
+        "category": "media",
+        "pricing": {
+          "model": "one_time_pro_unlock_with_ads",
+          "hasAds": true,
+          "hasProUnlock": true,
+          "adsDisabledForPro": true
+        },
+        "status": {
+          "android": "in_final_polish",
+          "web": "planned_for_hub_runtime",
+          "legacyWeb": "live",
+          "releaseTrack": "pre_playstore",
+          "label": "Binnenkort"
+        },
+        "routes": {
+          "canonicalWebRoute": "/apps/muziekspeler",
+          "canonicalWebUrl": "https://hub.pixelpiraterij.online/apps/muziekspeler",
+          "legacyWebDomain": "https://muziek.pixelpiraterij.online",
+          "playStoreUrl": ""
+        },
+        "labels": {
+          "free": "Reproducción básica",
+          "pro": "Biblioteca y controles ampliados"
+        },
+        "platformSupport": {
+          "android": true,
+          "web": true,
+          "legacyStandaloneWeb": true
+        },
+        "features": {
+          "core": [
+            "audio_playback",
+            "playlist_flow",
+            "calm_controls"
+          ],
+          "free": [
+            "basic_player",
+            "simple_playlist"
+          ],
+          "pro": [
+            "extended_library_tools",
+            "advanced_audio_controls"
+          ]
+        }
+      },
+      {
+        "id": "nautilus",
+        "icon": "NA",
+        "iconPath": "/assets/apps/nautilus.png",
+        "title": "Nautilus",
+        "tagline": "Una utilidad con profundidad y control.",
+        "description": "Una ruta de utilidad más amplia dentro de la suite, pensada para más control y estructura.",
+        "shortStatus": "Planeado para el nuevo runtime del hub.",
+        "category": "utility",
+        "pricing": {
+          "model": "one_time_pro_unlock_with_ads",
+          "hasAds": true,
+          "hasProUnlock": true,
+          "adsDisabledForPro": true
+        },
+        "status": {
+          "android": "in_final_polish",
+          "web": "planned_for_hub_runtime",
+          "legacyWeb": "absent",
+          "releaseTrack": "pre_playstore",
+          "label": "Binnenkort"
+        },
+        "routes": {
+          "canonicalWebRoute": "/apps/nautilus",
+          "canonicalWebUrl": "https://hub.pixelpiraterij.online/apps/nautilus",
+          "legacyWebDomain": "",
+          "playStoreUrl": ""
+        },
+        "labels": {
+          "free": "Paneles básicos",
+          "pro": "Sistema de paneles avanzado"
+        },
+        "platformSupport": {
+          "android": true,
+          "web": true,
+          "legacyStandaloneWeb": false
+        },
+        "features": {
+          "core": [
+            "control_center",
+            "privacy_options",
+            "tool_panels"
+          ],
+          "free": [
+            "basic_panels",
+            "simple_control"
+          ],
+          "pro": [
+            "advanced_panels",
+            "extended_controls"
+          ]
+        }
+      },
+      {
+        "id": "notities",
+        "icon": "NT",
+        "iconPath": "/assets/apps/notities.png",
+        "title": "Notities",
+        "tagline": "Escribir sin distracciones.",
+        "description": "Para notas rápidas, claras, en un entorno de trabajo tranquilo.",
+        "shortStatus": "Planeado para el nuevo runtime del hub.",
+        "category": "productivity",
+        "pricing": {
+          "model": "one_time_pro_unlock_with_ads",
+          "hasAds": true,
+          "hasProUnlock": true,
+          "adsDisabledForPro": true
+        },
+        "status": {
+          "android": "in_final_polish",
+          "web": "planned_for_hub_runtime",
+          "legacyWeb": "absent",
+          "releaseTrack": "pre_playstore",
+          "label": "Binnenkort"
+        },
+        "routes": {
+          "canonicalWebRoute": "/apps/notities",
+          "canonicalWebUrl": "https://hub.pixelpiraterij.online/apps/notities",
+          "legacyWebDomain": "",
+          "playStoreUrl": ""
+        },
+        "labels": {
+          "free": "Notas básicas",
+          "pro": "Exportación y organización avanzadas"
+        },
+        "platformSupport": {
+          "android": true,
+          "web": true,
+          "legacyStandaloneWeb": false
+        },
+        "features": {
+          "core": [
+            "note_editor",
+            "note_list",
+            "simple_organization"
+          ],
+          "free": [
+            "basic_notes",
+            "local_storage"
+          ],
+          "pro": [
+            "advanced_export",
+            "extended_organization"
+          ]
+        }
+      },
+      {
+        "id": "qrmaster",
+        "icon": "QR",
+        "iconPath": "/assets/apps/qrmaster.png",
+        "title": "QR Master",
+        "tagline": "Escanear, crear y compartir.",
+        "description": "Una utilidad para generar, leer y gestionar códigos QR dentro de la misma experiencia PixelPiraterij.",
+        "shortStatus": "La versión web legacy sigue activa.",
+        "category": "utility",
+        "pricing": {
+          "model": "one_time_pro_unlock_with_ads",
+          "hasAds": true,
+          "hasProUnlock": true,
+          "adsDisabledForPro": true
+        },
+        "status": {
+          "android": "in_final_polish",
+          "web": "planned_for_hub_runtime",
+          "legacyWeb": "live",
+          "releaseTrack": "pre_playstore",
+          "label": "Binnenkort"
+        },
+        "routes": {
+          "canonicalWebRoute": "/apps/qrmaster",
+          "canonicalWebUrl": "https://hub.pixelpiraterij.online/apps/qrmaster",
+          "legacyWebDomain": "https://qr.pixelpiraterij.online",
+          "playStoreUrl": ""
+        },
+        "labels": {
+          "free": "Escaneo y generación básicos",
+          "pro": "Historial y herramientas de exportación"
+        },
+        "platformSupport": {
+          "android": true,
+          "web": true,
+          "legacyStandaloneWeb": true
+        },
+        "features": {
+          "core": [
+            "scan_qr",
+            "generate_qr",
+            "share_results"
+          ],
+          "free": [
+            "basic_scan",
+            "basic_generate"
+          ],
+          "pro": [
+            "history_tools",
+            "advanced_export"
+          ]
+        }
+      },
+      {
+        "id": "schatkist",
+        "icon": "€",
+        "iconPath": "/assets/apps/schatkist.png",
+        "title": "Schatkist",
+        "tagline": "Control sobre tus finanzas.",
+        "description": "Para el presupuesto, la visión general y la disciplina en los gastos diarios y el ahorro.",
+        "shortStatus": "La versión web legacy sigue activa.",
+        "category": "finance",
+        "pricing": {
+          "model": "one_time_pro_unlock_with_ads",
+          "hasAds": true,
+          "hasProUnlock": true,
+          "adsDisabledForPro": true
+        },
+        "status": {
+          "android": "in_final_polish",
+          "web": "planned_for_hub_runtime",
+          "legacyWeb": "live",
+          "releaseTrack": "pre_playstore",
+          "label": "Binnenkort"
+        },
+        "routes": {
+          "canonicalWebRoute": "/apps/schatkist",
+          "canonicalWebUrl": "https://hub.pixelpiraterij.online/apps/schatkist",
+          "legacyWebDomain": "https://schatkist.pixelpiraterij.online",
+          "playStoreUrl": ""
+        },
+        "labels": {
+          "free": "Presupuesto básico",
+          "pro": "Estadísticas y exportación avanzadas"
+        },
+        "platformSupport": {
+          "android": true,
+          "web": true,
+          "legacyStandaloneWeb": true
+        },
+        "features": {
+          "core": [
+            "budget_tracking",
+            "transactions",
+            "financial_overview"
+          ],
+          "free": [
+            "basic_entries",
+            "simple_totals"
+          ],
+          "pro": [
+            "advanced_stats",
+            "extended_exports"
+          ]
+        }
+      },
+      {
+        "id": "scheepslog",
+        "icon": "SL",
+        "iconPath": "/assets/apps/scheepslog.png",
+        "title": "Scheepslog",
+        "tagline": "Tu día, tu ritmo, tu diario de a bordo.",
+        "description": "Una utilidad de journaling de PixelPiraterij para registrar patrones, estado de ánimo y progreso.",
+        "shortStatus": "Planeado para el nuevo runtime del hub.",
+        "category": "journal",
+        "pricing": {
+          "model": "one_time_pro_unlock_with_ads",
+          "hasAds": true,
+          "hasProUnlock": true,
+          "adsDisabledForPro": true
+        },
+        "status": {
+          "android": "in_final_polish",
+          "web": "planned_for_hub_runtime",
+          "legacyWeb": "absent",
+          "releaseTrack": "pre_playstore",
+          "label": "Binnenkort"
+        },
+        "routes": {
+          "canonicalWebRoute": "/apps/scheepslog",
+          "canonicalWebUrl": "https://hub.pixelpiraterij.online/apps/scheepslog",
+          "legacyWebDomain": "",
+          "playStoreUrl": ""
+        },
+        "labels": {
+          "free": "Journaling básico",
+          "pro": "Estadísticas y exportación ampliada"
+        },
+        "platformSupport": {
+          "android": true,
+          "web": true,
+          "legacyStandaloneWeb": false
+        },
+        "features": {
+          "core": [
+            "journal_entries",
+            "mood_tracking",
+            "timeline_view"
+          ],
+          "free": [
+            "basic_logging",
+            "local_history"
+          ],
+          "pro": [
+            "advanced_insights",
+            "extended_export"
+          ]
+        }
+      },
+      {
+        "id": "wachtwoord",
+        "icon": "PW",
+        "iconPath": "/assets/apps/wachtwoord.png",
+        "title": "Wachtwoord",
+        "tagline": "Contraseñas seguras, sin ruido.",
+        "description": "Genera y gestiona contraseñas en un flujo de utilidad tranquilo, con estructura gratuita y pro.",
+        "shortStatus": "La versión web legacy sigue activa.",
+        "category": "security",
+        "pricing": {
+          "model": "one_time_pro_unlock_with_ads",
+          "hasAds": true,
+          "hasProUnlock": true,
+          "adsDisabledForPro": true
+        },
+        "status": {
+          "android": "in_final_polish",
+          "web": "planned_for_hub_runtime",
+          "legacyWeb": "live",
+          "releaseTrack": "pre_playstore",
+          "label": "Binnenkort"
+        },
+        "routes": {
+          "canonicalWebRoute": "/apps/wachtwoord",
+          "canonicalWebUrl": "https://hub.pixelpiraterij.online/apps/wachtwoord",
+          "legacyWebDomain": "https://wachtwoord.pixelpiraterij.online",
+          "playStoreUrl": ""
+        },
+        "labels": {
+          "free": "Generador básico y bóveda limitada",
+          "pro": "Bóveda ilimitada y herramientas avanzadas"
         },
         "platformSupport": {
           "android": true,
